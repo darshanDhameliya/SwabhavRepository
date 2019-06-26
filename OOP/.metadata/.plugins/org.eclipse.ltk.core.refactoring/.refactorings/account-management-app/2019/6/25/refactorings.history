@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy 2 packages to &apos;banking-exception-app/src&apos;&#x0D;&#x0A;- Original project: &apos;account-management-app&apos;&#x0D;&#x0A;- Destination element: &apos;banking-exception-app/src&apos;&#x0D;&#x0A;- Original elements:&#x0D;&#x0A;     account-management-app/src/com.techlab.account&#x0D;&#x0A;     account-management-app/src/com.techlab.account.test" description="Copy packages" destination="=banking-exception-app/src" element1="/src&lt;com.techlab.account" element2="/src&lt;com.techlab.account.test" flags="589830" fragments="2" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyPackages" stamp="1560766115899" version="1.0"/>
+</session>

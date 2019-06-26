@@ -1,0 +1,20 @@
+package com.techlab.factory.method.part.three.test;
+
+import com.techlab.factory.method.part.three.IAutoMobile;
+import com.techlab.factory.method.part.three.IAutoMobileFactory;
+import com.techlab.factory.method.part.three.Proparties;
+import com.techlab.factory.method.part.three.TeslaFactory;
+
+public class AutoMobileTest {
+	public static void main(String args[]) {
+		Proparties proparties=new Proparties();
+		class<?> c=Class.forName(proparties.getProparties());
+		IAutoMobileFactory factory =TeslaFactory.getInstance();
+		IAutoMobile auto=factory.make();
+		
+		auto.start();
+		auto.stop();
+		
+		System.out.println("class name : "+auto.getClass().getSimpleName());
+	}
+}

@@ -1,0 +1,5 @@
+package com.techlab.lsp.violation;
+
+public class Square {
+
+}

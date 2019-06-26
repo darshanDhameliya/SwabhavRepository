@@ -1,0 +1,26 @@
+package com.techlab.board;
+
+public class Cell {
+
+	private Mark cell;
+
+	public Cell() {
+		cell = Mark.EMPTY;
+	}
+
+	public Mark getCell() {
+		return cell;
+	}
+
+	public void setCell(Mark cell) {
+		if(!this.cell.equals(Mark.EMPTY))
+			
+		this.cell = cell;
+	}
+	private boolean checkEmptyCell(Mark cell)
+	{
+		if (this.cell.equals(Mark.EMPTY))
+			return true;
+		return false;
+	}
+}

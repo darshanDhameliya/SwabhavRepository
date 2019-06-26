@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy 2 packages to &apos;design-patterns-app/src&apos;&#x0D;&#x0A;- Original project: &apos;singleton-pattern-example-app&apos;&#x0D;&#x0A;- Destination element: &apos;design-patterns-app/src&apos;&#x0D;&#x0A;- Original elements:&#x0D;&#x0A;     singleton-pattern-example-app/src/com.techlab.singleton&#x0D;&#x0A;     singleton-pattern-example-app/src/com.techlab.singleton.test" description="Copy packages" destination="=design-patterns-app/src" element1="/src&lt;com.techlab.singleton" element2="/src&lt;com.techlab.singleton.test" flags="589830" fragments="2" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyPackages" stamp="1561445744354" version="1.0"/>
+</session>

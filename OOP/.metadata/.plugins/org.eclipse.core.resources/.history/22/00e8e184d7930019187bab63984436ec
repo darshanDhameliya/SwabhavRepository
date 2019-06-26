@@ -1,0 +1,5 @@
+package com.techlab.singleton;
+
+public class Singleton {
+
+}

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.eclipse.jdt.launching.localJavaApplication">
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
+<listEntry value="/code-magnet-solution-app/src/com/headFirstJava/ch2/DrumKitTestDrive.java"/>
+</listAttribute>
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
+<listEntry value="1"/>
+</listAttribute>
+<stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="com.headFirstJava.ch2.DrumKitTestDrive"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="code-magnet-solution-app"/>
+</launchConfiguration>

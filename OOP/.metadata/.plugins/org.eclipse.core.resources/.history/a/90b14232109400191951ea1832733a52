@@ -1,0 +1,15 @@
+package com.techlab.account;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class AccountBalanceWithdrawTest {
+private Account account=new Account("darshan", "120000111210");
+	@Test(expected=ArithmeticException.class)
+	public void checkWithdrawCash_withdrawMoneyValueIsNegative_ThrowArithmeticException() {
+		System.out.println("withdraw money value is negative");
+		account.withdrawMoney(1);
+	}
+
+}

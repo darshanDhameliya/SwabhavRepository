@@ -1,0 +1,13 @@
+package com.techlab.account;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class AccountTest {
+Account account;
+	@Test(expected=NullPointerException.class)
+	public void testAccountStringStringInt() {
+	}
+
+}

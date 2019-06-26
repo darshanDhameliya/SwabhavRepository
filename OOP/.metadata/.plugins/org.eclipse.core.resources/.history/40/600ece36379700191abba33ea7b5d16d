@@ -1,0 +1,10 @@
+package com.techlab.singleton.simple.factory;
+
+public class AudiFactory implements IAutoMobileFactory{
+
+	@Override
+	public IAutoMobile make() {
+		return new Audi();
+	}
+
+}

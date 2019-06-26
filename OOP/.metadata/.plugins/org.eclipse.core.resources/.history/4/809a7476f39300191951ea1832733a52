@@ -1,0 +1,5 @@
+package com.techlab.calculation;
+
+public class TestException {
+
+}

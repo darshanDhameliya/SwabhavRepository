@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename package &apos;com.techlab.report.generator.facade&apos; to &apos;com.techlab.report.generator&apos;&#x0D;&#x0A;- Original project: &apos;facade-pattern-example-app&apos;&#x0D;&#x0A;- Original element: &apos;facade-pattern-example-app/src/com.techlab.report.generator.facade&apos;&#x0D;&#x0A;- Renamed element: &apos;facade-pattern-example-app/src/com.techlab.report.generator&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename package &apos;com.techlab.report.generator.facade&apos;" flags="589830" hierarchical="false" id="org.eclipse.jdt.ui.rename.package" input="/src&lt;com.techlab.report.generator.facade" name="com.techlab.report.generator" qualified="false" references="true" stamp="1561096498224" textual="false" version="1.0"/>
+</session>

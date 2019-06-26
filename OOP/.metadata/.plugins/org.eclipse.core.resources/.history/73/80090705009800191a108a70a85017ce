@@ -1,0 +1,39 @@
+package com.techlab.test.cases;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+import com.techlab.Exception.AllReadyMarkCellException;
+import com.techlab.board.Mark;
+import com.techlab.game.Game;
+import com.techlab.player.Player;
+
+public class GameTest {
+	Player player1 = new Player("Darshan", Mark.O);
+	Player player2 = new Player("Vivek", Mark.X);
+	Game game = new Game(player1, player2);
+
+	@Test(expected = NullPointerException.class)
+	public void testGameConstractorPassingValueNull_PassTwoPlayerObject_ThrowNullPointerException() {
+		Game game = new Game(null, null);
+	}
+
+	@Test
+	public void testGameConstractorPassingValueNotNull_PassTwoPlayerObject_ShouldBeNotThrowNullPointerException() {
+		Game game = new Game(player1, player2);
+	}
+
+	@Test(expected=AllReadyMarkCellException.class)
+	public void testSetMarkInCellOfBoardAndGetResultPassPositionOfCell_PlayerOnePatternComplete_ResultDarshanIsWin() throws AllReadyMarkCellException {
+		game.startGame();
+		game.setMarkInCellOfBoard(0);
+		game.setMarkInCellOfBoard(1);
+		game.setMarkInCellOfBoard(3);
+		game.setMarkInCellOfBoard(4);
+		game.setMarkInCellOfBoard(6);
+		
+		System.out.println(game.getResult());
+	}
+
+}

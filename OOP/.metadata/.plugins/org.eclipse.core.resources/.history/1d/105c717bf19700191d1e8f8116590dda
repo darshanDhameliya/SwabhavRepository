@@ -1,0 +1,35 @@
+package com.techlab.gam;
+
+import java.util.Scanner;
+
+import com.techlab.board.Board;
+import com.techlab.board.Cell;
+import com.techlab.player.Player;
+
+public class GameRunner {
+	private Board board;
+	private Cell[] boardCells;
+	private int GO_TO_NEXT_ROW=3;
+	private int GO_TO_NEXT_COLUMN=1;
+	public GameRunner(Board board)
+	{
+		this.board=board;
+	}
+	public void setPlayerSignInBoard(Player player1,Player player2)
+	{
+	    Scanner in = new Scanner(System.in);
+        int cellPosition = in.nextInt();
+        System.out.println("You entered string "+cellPosition);
+        board.setBoardCellMark(cellPosition, player1.getMark());
+        displayBoard();
+	}
+	public void displayBoard()
+	{
+		boardCells=board.getBoardState();
+		
+		for (int index = 0; index < boardCells.length; index=index+GO_TO_NEXT_ROW) {
+			System.out.println(boardCells[index]+" | "+boardCells[index+GO_TO_NEXT_COLUMN]+" | "+boardCells[index+GO_TO_NEXT_COLUMN+GO_TO_NEXT_COLUMN]);
+			System.out.println("-----------------------");
+		}
+	}
+}

@@ -1,0 +1,49 @@
+package com.techlab.inheritance.test;
+
+public class InheritanceTest {
+	public static void main(String args[]) {
+		case5();
+	}
+
+	public static void case1() {
+		Man x;
+		x = new Man();
+		x.play();
+		x.walk();
+	}
+	public static void case2() {
+		Boy y;
+		y = new Boy();
+		y.play();
+		y.eat();
+		y.talk();
+		y.walk();
+	}
+	public static void case3() {
+		Man x;
+		x=new Boy();
+		x.play();
+		x.walk();
+	}
+	public static void case4() {
+		atThePark(new Man());
+		atThePark(new Boy());
+		atThePark(new Kid());
+		atThePark(new Todler());
+	}
+	public static void case5() {
+		Object x;
+		x=10;
+		System.out.println(x);
+		x="darshan";
+		System.out.println(x);
+		x=new Man();
+		System.out.println(x);
+		x=true;
+		System.out.println(x);
+	}
+	public static void atThePark(Man x) {
+		System.out.println("At the park");
+		x.play();
+	}
+}

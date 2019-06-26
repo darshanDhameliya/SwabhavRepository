@@ -1,0 +1,33 @@
+package srp.violation;
+
+public class Invoice {
+	private String no;
+	private String date;
+	private double cost;
+	private float percentageOfDiscount;
+	private float percentageOfGst;
+	private double totalCost;
+	
+	public Invoice (String no,String date,double cost,float percentageOfDiscount,float percentageOfGst)
+	{
+		this.no=no;
+		this.date=date;
+		this.cost=cost;
+		this.percentageOfDiscount=percentageOfDiscount;
+		this.percentageOfGst=percentageOfGst;
+	}
+	public double calculateGstTex()
+	{
+		return cost*percentageOfGst;
+	}
+	public double calculateDiscount()
+	{
+		return cost*percentageOfDiscount;
+	}
+	public float calculateTotalCost()
+	{
+		this.totalCost=cost+gst-discount;
+		return (float) totalCost;
+	}
+	public void 
+}

@@ -1,0 +1,17 @@
+package com.techlab.board;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class BoardTest {
+	private Board board;
+	@Test
+	public void testBoardConstractor_CreateObjectOfBoard_BoardAllCellValueShouldBeEmpty() {
+		Cell[] actual;
+		board=new Board();
+		actual=board.getBoardState();
+	System.out.println(actual[0].getCellState().toString());
+	}
+
+}

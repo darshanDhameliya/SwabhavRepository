@@ -1,0 +1,18 @@
+package com.techlab.singleton.simple.factory.test;
+
+import com.techlab.singleton.simple.factory.IAutoMobileFactory;
+import com.techlab.singleton.simple.factory.TeslaFactory;
+import com.techlab.singleton.simple.factory.AutoType;
+import com.techlab.singleton.simple.factory.IAutoMobile;
+
+public class AutoMobileTest {
+	public static void main(String args[]) {
+		IAutoMobileFactory factory =new TeslaFactory();
+		IAutoMobile auto=factory.make();
+		
+		auto.start();
+		auto.stop();
+		
+		System.out.println("class name : "+auto.getClass().getSimpleName());
+	}
+}

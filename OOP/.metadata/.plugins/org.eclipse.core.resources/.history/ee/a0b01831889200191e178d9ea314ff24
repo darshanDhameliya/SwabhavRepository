@@ -1,0 +1,9 @@
+package com.techlab.guitar;
+
+public class Mondolin extends Instrument{
+	
+		public Mondolin(String serialNumber,double price,GuitarSpec guitarSpec)
+		{
+			super(serialNumber, price, guitarSpec);
+		}
+}

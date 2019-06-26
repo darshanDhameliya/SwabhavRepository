@@ -1,0 +1,28 @@
+package com.techlab.board;
+
+import static org.junit.Assert.*;
+
+import javax.print.DocFlavor.STRING;
+
+import org.junit.Test;
+
+public class CellTest {
+	private Cell cell=new Cell();
+	@Test
+	public void testCellContractor_CreateObjectOfCell_CellStateShouldBeEmpty() {
+		cell=new Cell();
+		String actual=cell.getCellState().toString();
+		String expected="Empty";
+		assertEquals(expected, actual);
+	}
+	@Test
+	public void testSetCellState_SetCellStateValueGivenInX_CellStateShouldBeX()
+	{
+		cell.setCellState(Mark.X);
+		String actual=cell.getCellState().toString();
+		String expected="X";
+		assertEquals(expected, actual);
+	}
+
+	
+}

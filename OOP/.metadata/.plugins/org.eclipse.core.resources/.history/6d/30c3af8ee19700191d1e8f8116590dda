@@ -1,0 +1,14 @@
+package com.techlab.game.runner;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class GameRunnerTest {
+
+	@Test
+	public void testSetPlayerSignInBoard() {
+		fail("Not yet implemented");
+	}
+
+}

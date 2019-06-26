@@ -1,0 +1,15 @@
+package com.techlab.game.runner;
+
+import com.techlab.board.Board;
+
+public class GameRunner {
+	private Board board;
+	public GameRunner(Board board)
+	{
+		this.board=board;
+	}
+	public void setPlayerSignInBoard()
+	{
+		
+	}
+}

@@ -1,0 +1,24 @@
+package com.techlab.board;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class CellTest {
+
+	@Test
+	public void testCell() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testGetCell() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testSetCell() {
+		fail("Not yet implemented");
+	}
+
+}

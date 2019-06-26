@@ -1,0 +1,18 @@
+package com.techlab.board;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class CellTest {
+	private Cell cell;
+	@Test
+	public void testCell() {
+		cell=new Cell();
+		String actual=cell.getCell().toString();
+		String expected="Empty";
+		assertEquals(expected, actual);
+	}
+
+	
+}

@@ -1,0 +1,43 @@
+1560771564327	Copy compilation unit
+1560771586524	Rename type 'TestCollection'
+1560772601326	Delete element
+1560773398218	Delete element
+1560773748502	Rename compilation unit 'hashsetCurdOperationTest.java'
+1560774009130	Copy packages
+1560774997289	Copy packages
+1560775090738	Rename type 'HashSetCurdOperation'
+1560775104494	Rename type 'HashsetCurdOperationTest'
+1560775580415	Rename type 'HashSetCurdOperation'
+1560775598701	Rename type 'TreeHashSetCurdOperation'
+1560775621990	Rename type 'HashsetCurdOperationTest'
+1560775794292	Rename package 'com.techlab.treeset.curd.operation.copy'
+1560775807037	Rename package 'com.techlab.treeset.curd.operation.test.copy'
+1560775884459	Delete elements
+1560775917161	Delete elements
+1560788535423	Copy packages
+1560790218795	Rename type 'HashSetCurdOperation'
+1560790233588	Rename type 'HashsetCurdOperationTest'
+1560792359322	Copy packages
+1560792400157	Rename type 'TreeSetCurdOperation'
+1560792425007	Rename type 'TreesetCurdOperationTest'
+1560824605675	Rename package 'com.techlab.linkedhashset.curd.operation.copy'
+1560824616663	Rename package 'com.techlab.linkedhashset.curd.operation.test.copy'
+1560824697956	Copy packages
+1560824728573	Rename type 'HashsetCurdOperationTest'
+1560824752002	Rename type 'HashSetCurdOperation'
+1560831813571	Copy compilation unit
+1560831826226	Copy compilation unit
+1560831832411	Delete element
+1560831842150	Delete element
+1560831865064	Copy compilation unit
+1560831868749	Delete element
+1560831905196	Copy package
+1560831928085	Copy compilation unit
+1560831931707	Delete element
+1560831938051	Delete element
+1560832149157	Copy packages
+1560832166231	Rename type 'HashMapCurdOperation'
+1560832182482	Rename type 'HashMapCurdOperationTest'
+1560832331953	Copy packages
+1560832352706	Rename type 'HashMapCurdOperation'
+1560832368570	Rename type 'HashMapCurdOperationTest'

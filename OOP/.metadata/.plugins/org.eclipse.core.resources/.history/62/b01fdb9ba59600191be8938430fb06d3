@@ -1,0 +1,7 @@
+package com.techlab.dip.solution;
+
+public class DbLogger {
+	public void log(String message) {
+		System.out.println(message);
+	}
+}

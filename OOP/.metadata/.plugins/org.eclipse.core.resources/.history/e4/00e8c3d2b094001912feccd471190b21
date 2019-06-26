@@ -1,0 +1,20 @@
+package com.techlab.board;
+
+import java.util.HashMap;
+
+public class Board {
+	private HashMap<String, Cell> board;
+
+	public Board() {
+		board = new HashMap<String, new Cell()>();
+	}
+
+	public void setBoardCellValue(String key,Mark mark)
+	{
+		board.put(key, mark);
+	}
+	public Mark getBoardCellValue(String key)
+	{
+		return board.get(key);
+	}
+}

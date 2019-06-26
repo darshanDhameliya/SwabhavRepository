@@ -1,0 +1,7 @@
+package com.techlab.data.loaded;
+
+
+public interface DataLoaded {
+
+	public void dataLoaded(String path);
+}

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy package &apos;com.techlab.constructor.case1&apos; to &apos;inheritance-app/src/com.techlab.constructor.case1&apos;&#x0D;&#x0A;- Original project: &apos;inheritance-app&apos;&#x0D;&#x0A;- Destination element: &apos;inheritance-app/src/com.techlab.constructor.case1&apos;&#x0D;&#x0A;- Original element: &apos;inheritance-app/src/com.techlab.constructor.case1&apos;" description="Copy package" destination="/src&lt;com.techlab.constructor.case1" element1="/src&lt;com.techlab.constructor.case1" flags="589830" fragments="1" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyPackages" stamp="1560497213612" version="1.0"/>
+</session>

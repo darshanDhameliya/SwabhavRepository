@@ -1,0 +1,13 @@
+package com.techlab.singleton.test;
+
+import com.techlab.singleton.DataService;
+
+public class SingletonTest {
+	public static void main(String args[]) {
+		DataService sv1 = DataService.getSingleton();
+		System.out.println("hashcode :" + sv1.hashCode());
+
+		DataService sv2 = DataService.getSingleton();
+		System.out.println("hashcode :" + sv2.hashCode());
+	}
+}

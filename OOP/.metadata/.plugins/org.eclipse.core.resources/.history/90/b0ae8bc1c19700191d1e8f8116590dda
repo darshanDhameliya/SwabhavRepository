@@ -1,0 +1,5 @@
+package com.techlab.score.display;
+
+public class CurrentScoreDisplay {
+
+}

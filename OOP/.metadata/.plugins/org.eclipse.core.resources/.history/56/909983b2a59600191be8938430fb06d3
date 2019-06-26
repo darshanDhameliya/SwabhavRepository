@@ -1,0 +1,27 @@
+package com.techlab.dip.solutionn;
+
+public class TaxCalculator {
+	private LogType log;
+
+	public TaxCalculator(LogType log) {
+		this.log = log;
+	}
+
+	public int calculateTax(int amount, int rate) {
+		int r = 0;
+		try {
+
+			r = amount / rate;
+		} catch (Exception e) {
+			if (log == LogType.DB) {
+				new DbLogger().log("storing exception in database");
+				return -1;
+			}
+			if (log == LogType.FILE) {
+				new DbLogger().log("storing exception in file");
+				return -2;
+			}
+		}
+		return r;
+	}
+}

@@ -1,0 +1,7 @@
+package ocp.violation;
+
+public class FixedDeposit {
+	public String accNo;
+	public String nane;
+	public double 
+}

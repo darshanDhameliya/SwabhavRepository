@@ -1,0 +1,5 @@
+package com.techlab.report.writer;
+
+public class ReportWriter {
+
+}

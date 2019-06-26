@@ -1,0 +1,10 @@
+package com.techlab.singleton.simple.factory;
+
+public class BmwFactory implements IAutoMobileFactory{
+
+	@Override
+	public IAutoMobile make() {
+		return new Bmw();
+	}
+
+}

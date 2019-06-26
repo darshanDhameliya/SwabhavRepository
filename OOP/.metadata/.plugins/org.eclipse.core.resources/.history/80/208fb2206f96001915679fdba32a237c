@@ -1,0 +1,5 @@
+package com.techlab.lsp.violation;
+
+public interface Shap {
+public double calculateArea();
+}

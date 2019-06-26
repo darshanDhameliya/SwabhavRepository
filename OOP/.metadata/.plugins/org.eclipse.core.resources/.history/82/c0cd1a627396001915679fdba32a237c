@@ -1,0 +1,25 @@
+package com.techlab.isp.violation;
+
+public class Robot implements IWorker{
+
+	@Override
+	public void startWork() {
+		System.out.println("robot start work");
+	}
+
+	@Override
+	public void stopWork() {
+		System.out.println("robot stop work");
+	}
+
+	@Override
+	public void startEat() {
+		System.out.println("robot start eat");
+	}
+
+	@Override
+	public void stopEat() {
+		System.out.println("robot stop eat");
+	}
+
+}

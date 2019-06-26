@@ -1,0 +1,5 @@
+package com.techlab.dip.solutionn;
+
+public enum LogType {
+FILE,DB
+}

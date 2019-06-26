@@ -1,0 +1,29 @@
+package com.techlab.board;
+
+import java.util.HashMap;
+
+public class Board {
+	private Cell[] board;
+	private int MAXIMUM_POSITION_BOARD=9;
+	
+
+	public Board() {
+		board=new Cell[9];
+	}
+
+	public void setBoardCellValue(int position,Mark mark)
+	{
+		if (checkBoardCellPosition(position))
+			board[position].setCellState(mark);
+	}
+	public Cell[] getBoardState()
+	{
+		return board;
+	}
+	private boolean checkBoardCellPosition(int position)
+	{
+		if (position<MAXIMUM_POSITION_BOARD)
+			return true;
+		return false;
+	}
+}

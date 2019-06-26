@@ -1,0 +1,31 @@
+package com.techlab.test.cases;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+import com.techlab.game.Game;
+
+public class GameTest {
+
+	@Test(expected=NullPointerException.class)
+	public void testGameConstractorPassingValueNull_PassTwoPlayerObject_ThrowNullPointerException() {
+		Game game=new Game(null, null);
+	}
+
+	@Test
+	public void testStartGame() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testSetMarkInCellOfBoard() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testGetResult() {
+		fail("Not yet implemented");
+	}
+
+}

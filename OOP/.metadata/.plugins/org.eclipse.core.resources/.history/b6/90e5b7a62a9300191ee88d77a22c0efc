@@ -1,0 +1,13 @@
+package com.techlab.data.employee;
+
+public class Employee {
+	private Integer id;
+	private String name;
+	private String designation;
+	private Integer managerId;
+	private String dateOfJoin;
+	private Integer salary;
+	private Integer commision;
+	private Integer department;
+
+}

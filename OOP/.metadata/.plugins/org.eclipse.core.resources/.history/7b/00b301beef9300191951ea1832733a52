@@ -1,0 +1,17 @@
+package com.techlab.calculation;
+
+public class Calculation {
+
+	public static int findMaxNumber(int[] arr) {
+		int max=arr[0];
+		for (int value : arr) {
+			if (max<integer)
+				max=integer;
+		}
+		return max;
+	}
+	public static int cube(Integer n)
+	{
+		return n*n*n;
+	}
+}

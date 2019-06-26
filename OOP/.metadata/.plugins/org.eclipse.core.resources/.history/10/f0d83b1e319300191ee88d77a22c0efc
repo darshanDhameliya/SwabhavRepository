@@ -1,0 +1,33 @@
+package com.techlab.employee.test;
+
+import java.util.HashSet;
+
+import com.techlab.analyze.Analyze;
+import com.techlab.data.loaded.DiskLoaded;
+import com.techlab.data.loaded.URLLoaded;
+import com.techlab.employee.Employee;
+
+public class EmployeeTest {
+
+	public static void main(String args[]) {
+		Employee employee;
+		Analyze analyze = null;
+		
+		URLLoaded urlLoaded=new URLLoaded();
+		urlLoaded.dataLoaded("https://swabhav-tech.firebaseapp.com/emp.txt ");
+		
+		employee=analyze.maximumSalaryEmployee();
+//		System.out.println("----------disk loaded----------");
+//		DiskLoaded diskLoaded = new DiskLoaded();
+//		HashSet<String> strings = diskLoaded.dataLoaded("E:\\dataFile.txt");
+//		for (String string : strings) {
+//			System.out.println(string);
+//		}
+//		System.out.println("----------URL loaded----------");
+//		URLLoaded urlLoaded = new URLLoaded();
+//		HashSet<String> strings1 = urlLoaded.dataLoaded("https://swabhav-tech.firebaseapp.com/emp.txt ");
+//		for (String string : strings1) {
+//			System.out.println(string);
+//		}
+	}
+}

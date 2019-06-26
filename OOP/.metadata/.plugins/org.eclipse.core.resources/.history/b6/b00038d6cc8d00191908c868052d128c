@@ -1,0 +1,13 @@
+package com.techlab.inheritance.test;
+
+public class InheritanceTest {
+	public static void main(String args[])
+	{
+		Boy x;
+		x=new Boy();
+		x.play();
+		x.eat();
+		x.talk();
+		x.walk();
+	}
+}

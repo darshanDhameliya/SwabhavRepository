@@ -1,0 +1,17 @@
+package com.techlab.player;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+import com.techlab.board.Mark;
+
+public class PlayerTest {
+private Player Player;
+	@Test(expected=NullPointerException.class)
+	public void testPlayerConstractorPassingValueNull_PassValueOfPlayerNameAndMark_ThrowNullPointerException() {
+		Player=new Player(null,null);
+		
+	}
+
+}

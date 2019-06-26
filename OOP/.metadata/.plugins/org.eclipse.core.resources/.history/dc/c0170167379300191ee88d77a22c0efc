@@ -1,0 +1,48 @@
+package com.techlab.data.parse;
+
+import java.util.ArrayList;
+import java.util.HashSet;
+
+import com.techlab.analyze.Analyze;
+import com.techlab.employee.Employee;
+
+public class DataParse {
+	private HashSet<String> strings = new HashSet<String>();
+	
+	
+
+
+	public DataParse(HashSet<String> strings) {
+		this.strings = strings;
+		dataStore();
+	}
+
+	public void dataStore() {
+		ArrayList<Employee>employees=new ArrayList<Employee>();
+		Integer id;
+		String name;
+		String designation;
+		Integer managerId;
+		String dateOfJoin;
+		Integer salary;
+		Integer commision;
+		Integer department;
+		for (String string : strings) {
+			String [] data = string.split(",");
+
+			System.out.println(data[1]);
+//			id=Integer.parseInt(data[0]);
+//			name=data[1];
+//			designation=data[2];
+//			managerId=Integer.parseInt(data[3]);
+//			dateOfJoin=data[4];
+//			salary=Integer.parseInt(data[5]);
+//			commision=Integer.parseInt(data[6]);
+//			department=Integer.parseInt(data[7]);
+//			
+//			employees.add(new Employee(id, name, designation, managerId, dateOfJoin, salary, commision, department));		
+		}
+	new Analyze(employees);	
+	}
+
+}

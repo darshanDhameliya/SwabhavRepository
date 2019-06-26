@@ -1,0 +1,13 @@
+package com.techlab.singleton;
+
+public class DataService {
+	private static DataService obj;
+
+	private DataService(){}
+
+	public static DataService getSingleton() {
+		if (obj==null)
+			obj=new DataService();
+		return obj;
+	}
+}

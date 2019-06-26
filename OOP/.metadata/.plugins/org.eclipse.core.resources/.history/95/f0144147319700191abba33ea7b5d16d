@@ -1,0 +1,16 @@
+package com.techlab.singleton.simple.factory;
+
+public interface IAutoMobileFactory {
+//
+//	private static IAutoMobileFactory autoMobileFactory;
+//	private IAutoMobileFactory() {
+//	}
+//
+//	public static IAutoMobileFactory getInstance()
+//	{
+//		if (autoMobileFactory==null)
+//			autoMobileFactory=new IAutoMobileFactory();
+//		return autoMobileFactory;
+//	}
+	public IAutoMobile make() ;
+}

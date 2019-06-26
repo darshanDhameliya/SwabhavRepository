@@ -1,0 +1,17 @@
+package com.techlab.account;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
+
+class AccountTest {
+
+	private Account account;
+
+	@Test()
+	void testAccountStringStringInt() {
+		System.out.println("check constructor of three parameter");
+		account=new Account("darshan", null, 1000);
+	}
+
+}

@@ -1,0 +1,51 @@
+package com.techlab.board;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class BoardTest {
+	private Board board=new Board();
+
+	@Test
+	public void testBoardConstractor_CreateObjectOfBoard_BoardAllCellValueShouldBeEmpty() {
+		board = new Board();
+		Cell[] actuals = board.getBoardState();
+		String expected = "Empty";
+		for (Cell actual : actuals) {
+			assertEquals(expected, actual.getCellState().toString());
+		}
+	}
+
+	@Test
+	public void testSetBoardCellValue_SetBoard5IndexCellValueGivenInX_ResultBoard5IndexCellValueShouldBeX() {
+	int cellIndex=5;
+		board.setBoardCellValue(cellIndex, Mark.X);
+		Cell actual = board.getBoardCellValue(cellIndex);
+		String expected = "X";
+		assertEquals(expected, actual.getCellState().toString());
+	}
+
+	@Test(expected=IndexOutOfBoundsException.class)
+	public void testSetBoardCellValue_SetBoard9IndexCellValueGivenInX_ThrowIndexOutOfBoundException() {
+	
+		board.setBoardCellValue(9, Mark.X);
+	}
+
+	@Test
+	public void testGetBoardCellValue_GetValue5IndexCellOfBoard_ResultBoard5IndexCellValueShouldBeX() {
+		board.setBoardCellValue(5, Mark.X);
+		Cell actual = board.getBoardCellValue(5);
+		String expected = "X";
+		assertEquals(expected, actual.getCellState().toString());
+	}
+
+	@Test
+	public void testGetBoardState_GetValueCellsOfBoard_ResultBoardCellsValueShouldBeEmpty() {
+		Cell[] actuals = board.getBoardState();
+		String expected = "Empty";
+		for (Cell actual : actuals) {
+			assertEquals(expected, actual.getCellState().toString());
+		}
+	}
+}

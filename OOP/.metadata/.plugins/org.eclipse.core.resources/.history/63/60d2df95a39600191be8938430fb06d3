@@ -1,0 +1,13 @@
+package com.techlab.dip.violution;
+
+public class TaxCalculator {
+	private LogType log;
+
+	public TaxCalculator(LogType log) {
+		this.log = log;
+	}
+
+	public int calculateTax(int amount, int rate) {
+		return amount / rate;
+	}
+}

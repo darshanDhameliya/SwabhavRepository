@@ -1,0 +1,34 @@
+package com.techlab.account;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class AccountGetterSetterTest {
+	private Account account = new Account("darshan", "120000111021");
+
+	@Test
+	public void testSetName_SetAccountNameValueIsDarshan_AccountNameIsDarshan() {
+		account.setName("darshan");
+		String exceptedName = account.getName();
+
+		assertEquals("darshan", exceptedName);
+	}
+
+	@Test
+	public void testSetAccountNumber_SetAccountNumberValueIs120000111021_AccountNumberIs120000111021() {
+		account.setAccountNumber("120000111021");
+		String exceptedAccountNumber = account.getAccountNumber();
+
+		assertEquals("120000111021", exceptedAccountNumber);
+	}
+
+	@Test
+	public void testSetBalance_SetAccountBalanceValueIs1000_AccountBalanceIs1000() {
+		account.setBalance(1000);
+		int exceptedBalance = account.getBalance();
+
+		assertEquals("darshan", exceptedName);
+	}
+
+}

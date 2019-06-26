@@ -1,0 +1,17 @@
+package com.techlab.singleton.simple.factory;
+
+import com.techlab.simple.factory.AutoMobileFactory;
+
+public class AutoMobileFactorySingleton implements ia{
+	  private static AutoMobileFactory instance;
+
+	  private AutoMobileFactorySingleton() 
+	  {
+	  } 
+
+	  public static MyInterface getInstance()
+	  {
+	    return instance;
+	  }
+	}
+}

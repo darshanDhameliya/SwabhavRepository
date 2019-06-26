@@ -1,0 +1,36 @@
+package com.techlab.factory.method.part.three;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+
+public class Properties {
+	private Properties proparties;
+	private String path;
+	private String fileName;
+	private FileOutputStream outputStream;
+	private FileInputStream inputStream;
+
+	public Class getProparties() {
+		fileName = "Config.proparties";
+		path = "D:\\eclipse\\eclipse-workspace\\design-patterns-app" + fileName;
+		Properties properties;
+		try {
+			inputStream = new FileInputStream(path);
+			properties = new Properties();
+
+			properties.load(inputStream);
+
+		} catch (FileNotFoundException exception) {
+			System.out.println("File not found");
+		} catch (IOException e) {
+
+			e.printStackTrace();
+		}
+		return null;
+		
+	}
+}
+
+}

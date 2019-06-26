@@ -1,0 +1,57 @@
+package com.techlab.guitar;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public abstract class InstrumentSpec {
+	private Map properties;
+	
+	public InstrumentSpec(Map properties)
+	{
+		if (properties==null) 
+			this.properties=new HashMap();
+		else
+			this.properties=new HashMap(properties);
+	}
+
+	public Object getProperty(String propertyName) {
+		return properties.get(propertyName);
+	}
+	public Map getProperties() {
+		return properties;
+	}
+	public Builder getBuilder() {
+		return builder;
+	}
+
+	public String getModel() {
+		return model;
+	}
+
+	public Type getType() {
+		return type;
+	}
+
+	public Wood getBackwood() {
+		return backwood;
+	}
+
+	public Wood getTopwood() {
+		return topwood;
+	}
+	
+	public boolean matches(InstrumentSpec otherSpec)
+	{
+		if(builder!=otherSpec.builder)
+			return false;
+		if((model!=null)&&(!model.equals(""))&&(model!=otherSpec.model))
+			return false;
+		if(type!=otherSpec.type)
+			return false;
+		if(backwood!=otherSpec.backwood)
+			return false;
+		if(topwood!=otherSpec.topwood)
+			return false;
+		return true;
+	}
+}

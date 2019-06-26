@@ -1,0 +1,20 @@
+package srp.violation;
+
+public class Invoice {
+	private String no;
+	private String date;
+	private double cost;
+	private float discount;
+	private float gst;
+	private float percentageDiscount;
+	private float percentageGst;
+	
+	public Invoice (String no,String date,double cost,float percentageDiscount,float percentageGst)
+	{
+		this.no=no;
+		this.date=date;
+		this.cost=cost;
+		this.percentageDiscount=percentageDiscount;
+		this.percentageGst=percentageGst;
+	}
+}

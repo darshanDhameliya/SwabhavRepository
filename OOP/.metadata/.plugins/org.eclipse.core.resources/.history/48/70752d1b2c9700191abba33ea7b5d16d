@@ -1,0 +1,13 @@
+package com.techlab.simple.factory;
+
+public class AutoMobileFactory {
+	public IAutoMobile make(AutoType autoType) {
+		if (autoType.equals(AutoType.BMW))
+			return new Bmw();
+		if (autoType == AutoType.TESLA)
+			return new Tesla();
+		if (autoType == AutoType.AUDI)
+			return new Audi();
+		return null;
+	}
+}

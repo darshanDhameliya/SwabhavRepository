@@ -1,0 +1,28 @@
+package com.techlab.game.test;
+
+import java.util.Scanner;
+
+import com.techlab.board.Mark;
+import com.techlab.game.Game;
+import com.techlab.player.Player;
+
+public class GameTest {
+
+	public static void main(String args[]) {
+		Player player1 = new Player("Darshan", Mark.O);
+		Player player2 = new Player("Vivek", Mark.X);
+		int cellPosition;
+
+		Game game = new Game(player1, player2);
+		game.startGame();
+		System.out.println(game.getResult());
+		
+		while (game.getResult().equals("In_Progress")) {
+			System.out.println("entered position : ");
+			Scanner in = new Scanner(System.in);
+			cellPosition = in.nextInt();
+			game.setMarkInCellOfBoard(cellPosition);
+		}
+	}
+
+}

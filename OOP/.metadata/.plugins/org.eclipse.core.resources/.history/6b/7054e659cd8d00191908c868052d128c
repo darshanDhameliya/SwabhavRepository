@@ -1,0 +1,11 @@
+package com.techlab.inheritance.test;
+
+public class InheritanceTest {
+	public static void main(String args[])
+	{
+		Man x;
+		x=new Boy();
+		x.play();
+		x.walk();
+	}
+}

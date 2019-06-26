@@ -1,0 +1,11 @@
+package com.techlab.singleton.simple.factory;
+
+public class TeslaFactory implements IAutoMobileFactory{
+
+	@Override
+	public IAutoMobile make() {
+		return new Tesla();
+	}
+
+	
+}

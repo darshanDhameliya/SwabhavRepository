@@ -1,0 +1,35 @@
+package com.techlab.data.loaded;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.ArrayList;
+
+public class DiskLoaded implements DataLoaded {
+	private ArrayList<String> strings;
+
+	@Override
+	public ArrayList<String> dataLoaded() {
+		File file = new File("C:\\Users\\pankaj\\Desktop\\test.txt");
+
+		BufferedReader br = null;
+		try {
+			br = new BufferedReader(new FileReader(file));
+		} catch (FileNotFoundException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+
+		try {
+			while (br.readLine() != null) {
+				strings.add(br.readLine());
+			}
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return strings;
+	}
+
+}
