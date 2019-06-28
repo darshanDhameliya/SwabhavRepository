@@ -1,7 +1,8 @@
 package com.techlab.contact;
 
+import java.io.Serializable;
 
-public class Contact {
+public class Contact implements Serializable{
 	private String name;
 	private String email;
 	private Long phoneNo;
