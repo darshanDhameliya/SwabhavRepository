@@ -1,9 +1,0 @@
-package com.techlab.guitar;
-
-public class Mandolin extends Instrument{
-	
-		public Mandolin(String serialNumber,double price,GuitarSpec guitarSpec)
-		{
-			super(serialNumber, price, guitarSpec);
-		}
-}

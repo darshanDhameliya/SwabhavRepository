@@ -1,5 +1,0 @@
-package com.techlab.payment.strategy;
-
-public class CreaditCardStrategy {
-
-}

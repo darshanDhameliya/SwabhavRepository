@@ -7585,3 +7585,225 @@ This warning can be switched off on the Team > Git > Confirmations and Warnings 
 
 !ENTRY org.eclipse.jface.text 2 0 2019-06-26 15:09:04.751
 !MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.round'
+!SESSION 2019-06-26 22:20:08.698 -----------------------------------------------
+eclipse.buildId=4.7.3.M20180330-0640
+java.version=1.8.0_181
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product -data E:\swabhavRepository\OOP -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.egit.ui 2 0 2019-06-26 22:20:21.909
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\inet'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+!SESSION 2019-06-27 09:20:37.365 -----------------------------------------------
+eclipse.buildId=4.7.3.M20180330-0640
+java.version=1.8.0_181
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product -data E:\swabhavRepository\OOP -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.egit.ui 2 0 2019-06-27 09:20:52.545
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\inet'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+!SESSION 2019-06-27 13:00:54.832 -----------------------------------------------
+eclipse.buildId=4.7.3.M20180330-0640
+java.version=1.8.0_181
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product -data E:\swabhavRepository\OOP -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.egit.ui 2 0 2019-06-27 13:01:04.979
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\inet'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.jface.text 2 0 2019-06-27 13:04:45.082
+!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.number'
+
+!ENTRY org.eclipse.jface.text 2 0 2019-06-27 13:04:45.083
+!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.round'
+
+!ENTRY org.eclipse.jface.text 2 0 2019-06-27 13:04:50.623
+!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.number'
+
+!ENTRY org.eclipse.jface.text 2 0 2019-06-27 13:04:50.624
+!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.round'
+
+!ENTRY org.eclipse.core.jobs 4 2 2019-06-27 14:30:46.862
+!MESSAGE An internal error occurred during: "ASSIGNMENT prefetch job for: PRIVATE_MEMBER".
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.jdt.internal.core.manipulation.dom.ASTResolving.getParentMethodOrTypeBinding(ASTResolving.java:580)
+	at com.codota.eclipse.psi.EditorCodeResolver.buildQuery(EditorCodeResolver.java:173)
+	at com.codota.eclipse.assistant.completion.CompletionsPrefetcher.buildQuery(CompletionsPrefetcher.java:68)
+	at com.codota.eclipse.assistant.completion.CompletionsPrefetcher.lambda$0(CompletionsPrefetcher.java:39)
+	at org.eclipse.core.runtime.jobs.Job$1.run(Job.java:161)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:56)
+
+!ENTRY org.eclipse.core.jobs 4 2 2019-06-27 14:30:46.878
+!MESSAGE An internal error occurred during: "ASSIGNMENT prefetch job for: PRIVATE_MEMBER".
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.jdt.internal.core.manipulation.dom.ASTResolving.getParentMethodOrTypeBinding(ASTResolving.java:580)
+	at com.codota.eclipse.psi.EditorCodeResolver.buildQuery(EditorCodeResolver.java:173)
+	at com.codota.eclipse.assistant.completion.CompletionsPrefetcher.buildQuery(CompletionsPrefetcher.java:68)
+	at com.codota.eclipse.assistant.completion.CompletionsPrefetcher.lambda$0(CompletionsPrefetcher.java:39)
+	at org.eclipse.core.runtime.jobs.Job$1.run(Job.java:161)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:56)
+
+!ENTRY org.eclipse.core.jobs 4 2 2019-06-27 14:30:56.922
+!MESSAGE An internal error occurred during: "ASSIGNMENT prefetch job for: PRIVATE_MEMBER".
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.jdt.internal.core.manipulation.dom.ASTResolving.getParentMethodOrTypeBinding(ASTResolving.java:580)
+	at com.codota.eclipse.psi.EditorCodeResolver.buildQuery(EditorCodeResolver.java:173)
+	at com.codota.eclipse.assistant.completion.CompletionsPrefetcher.buildQuery(CompletionsPrefetcher.java:68)
+	at com.codota.eclipse.assistant.completion.CompletionsPrefetcher.lambda$0(CompletionsPrefetcher.java:39)
+	at org.eclipse.core.runtime.jobs.Job$1.run(Job.java:161)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:56)
+
+!ENTRY org.eclipse.core.jobs 4 2 2019-06-27 14:30:56.942
+!MESSAGE An internal error occurred during: "ASSIGNMENT prefetch job for: PRIVATE_MEMBER".
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.jdt.internal.core.manipulation.dom.ASTResolving.getParentMethodOrTypeBinding(ASTResolving.java:580)
+	at com.codota.eclipse.psi.EditorCodeResolver.buildQuery(EditorCodeResolver.java:173)
+	at com.codota.eclipse.assistant.completion.CompletionsPrefetcher.buildQuery(CompletionsPrefetcher.java:68)
+	at com.codota.eclipse.assistant.completion.CompletionsPrefetcher.lambda$0(CompletionsPrefetcher.java:39)
+	at org.eclipse.core.runtime.jobs.Job$1.run(Job.java:161)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:56)
+
+!ENTRY org.eclipse.core.jobs 4 2 2019-06-27 14:31:04.735
+!MESSAGE An internal error occurred during: "ASSIGNMENT prefetch job for: PRIVATE_MEMBER".
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.jdt.internal.core.manipulation.dom.ASTResolving.getParentMethodOrTypeBinding(ASTResolving.java:580)
+	at com.codota.eclipse.psi.EditorCodeResolver.buildQuery(EditorCodeResolver.java:173)
+	at com.codota.eclipse.assistant.completion.CompletionsPrefetcher.buildQuery(CompletionsPrefetcher.java:68)
+	at com.codota.eclipse.assistant.completion.CompletionsPrefetcher.lambda$0(CompletionsPrefetcher.java:39)
+	at org.eclipse.core.runtime.jobs.Job$1.run(Job.java:161)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:56)
+
+!ENTRY org.eclipse.core.jobs 4 2 2019-06-27 14:31:04.754
+!MESSAGE An internal error occurred during: "ASSIGNMENT prefetch job for: PRIVATE_MEMBER".
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.jdt.internal.core.manipulation.dom.ASTResolving.getParentMethodOrTypeBinding(ASTResolving.java:580)
+	at com.codota.eclipse.psi.EditorCodeResolver.buildQuery(EditorCodeResolver.java:173)
+	at com.codota.eclipse.assistant.completion.CompletionsPrefetcher.buildQuery(CompletionsPrefetcher.java:68)
+	at com.codota.eclipse.assistant.completion.CompletionsPrefetcher.lambda$0(CompletionsPrefetcher.java:39)
+	at org.eclipse.core.runtime.jobs.Job$1.run(Job.java:161)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:56)
+
+!ENTRY org.eclipse.core.jobs 4 2 2019-06-27 16:13:43.926
+!MESSAGE An internal error occurred during: "ASSIGNMENT prefetch job for: PUBLIC_MEMBER".
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.jdt.internal.core.manipulation.dom.ASTResolving.getParentMethodOrTypeBinding(ASTResolving.java:580)
+	at com.codota.eclipse.psi.EditorCodeResolver.buildQuery(EditorCodeResolver.java:173)
+	at com.codota.eclipse.assistant.completion.CompletionsPrefetcher.buildQuery(CompletionsPrefetcher.java:68)
+	at com.codota.eclipse.assistant.completion.CompletionsPrefetcher.lambda$0(CompletionsPrefetcher.java:39)
+	at org.eclipse.core.runtime.jobs.Job$1.run(Job.java:161)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:56)
+
+!ENTRY org.eclipse.core.jobs 4 2 2019-06-27 16:13:43.937
+!MESSAGE An internal error occurred during: "ASSIGNMENT prefetch job for: PUBLIC_MEMBER".
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.jdt.internal.core.manipulation.dom.ASTResolving.getParentMethodOrTypeBinding(ASTResolving.java:580)
+	at com.codota.eclipse.psi.EditorCodeResolver.buildQuery(EditorCodeResolver.java:173)
+	at com.codota.eclipse.assistant.completion.CompletionsPrefetcher.buildQuery(CompletionsPrefetcher.java:68)
+	at com.codota.eclipse.assistant.completion.CompletionsPrefetcher.lambda$0(CompletionsPrefetcher.java:39)
+	at org.eclipse.core.runtime.jobs.Job$1.run(Job.java:161)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:56)
+!SESSION 2019-06-27 17:27:55.437 -----------------------------------------------
+eclipse.buildId=4.7.3.M20180330-0640
+java.version=1.8.0_181
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.egit.ui 2 0 2019-06-27 17:28:12.866
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\inet'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+!SESSION 2019-06-27 21:27:15.958 -----------------------------------------------
+eclipse.buildId=4.7.3.M20180330-0640
+java.version=1.8.0_181
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.egit.ui 2 0 2019-06-27 21:27:40.760
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\inet'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.jface.text 2 0 2019-06-27 21:31:30.157
+!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.number'
+
+!ENTRY org.eclipse.jface.text 2 0 2019-06-27 21:31:30.157
+!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.round'
+
+!ENTRY org.eclipse.jface.text 2 0 2019-06-27 21:34:14.561
+!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.number'
+
+!ENTRY org.eclipse.jface.text 2 0 2019-06-27 21:34:14.564
+!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.round'
+!SESSION 2019-06-28 08:40:04.675 -----------------------------------------------
+eclipse.buildId=4.7.3.M20180330-0640
+java.version=1.8.0_181
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.egit.ui 2 0 2019-06-28 08:40:34.039
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\inet'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.jface.text 2 0 2019-06-28 08:47:15.561
+!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.number'
+
+!ENTRY org.eclipse.jface.text 2 0 2019-06-28 08:47:15.564
+!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.round'
+
+!ENTRY org.eclipse.jface.text 2 0 2019-06-28 08:52:53.719
+!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.number'
+
+!ENTRY org.eclipse.jface.text 2 0 2019-06-28 08:52:53.719
+!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.round'
+!SESSION 2019-06-28 11:12:24.095 -----------------------------------------------
+eclipse.buildId=4.7.3.M20180330-0640
+java.version=1.8.0_181
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.egit.ui 2 0 2019-06-28 11:13:01.219
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\inet'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.

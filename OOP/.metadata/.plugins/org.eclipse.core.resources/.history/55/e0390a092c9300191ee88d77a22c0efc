@@ -1,8 +1,0 @@
-package com.techlab.data.loaded;
-
-import java.util.HashSet;
-
-public interface DataLoaded {
-
-	public void dataLoaded(String path);
-}

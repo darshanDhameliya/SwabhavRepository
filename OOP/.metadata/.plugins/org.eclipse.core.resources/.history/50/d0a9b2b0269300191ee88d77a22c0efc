@@ -1,8 +1,0 @@
-package com.techlab.data.loaded;
-
-import java.util.ArrayList;
-
-public interface DataLoaded {
-
-	public ArrayList<String> dataLoaded(String path);
-}

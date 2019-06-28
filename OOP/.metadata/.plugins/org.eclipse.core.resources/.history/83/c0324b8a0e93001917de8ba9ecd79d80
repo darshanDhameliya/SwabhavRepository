@@ -1,5 +1,0 @@
-package com.techlab.guitar;
-
-public enum InstrumentType {
-
-}

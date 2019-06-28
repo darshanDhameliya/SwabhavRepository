@@ -5,3 +5,11 @@
 1561541898090	Move compilation unit
 1561541907333	Move compilation unit
 1561541955043	Move compilation unit
+1561632571713	Rename field 'playerNameText'
+1561632611529	Rename field 'playerNameLabel'
+1561634220347	Rename method 'checkWhoPlayerIsWin'
+1561692150017	Delete element
+1561695678976	Rename field 'playerOne'
+1561695693677	Rename field 'playerTwo'
+1561695706150	Rename field 'playerOneName'
+1561695717331	Rename field 'playerTwoName'

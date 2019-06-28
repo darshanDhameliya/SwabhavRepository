@@ -43,16 +43,22 @@ public class Game {
 		return null;
 	}
 
+	public Player getCurrentPlayer() {
+		if (player1.getMark().equals(playerSign))
+			return player1;
+		return player2;
+	}
+
 	public String getResult() {
 
 		Result result = resultAnalyze.genrateResultState();
 		if (result.equals(Result.WIN)) {
-			return checkWhoPlayerIsWin();
+			return checkWhichPlayerIsWin();
 		}
 		return result.toString();
 	}
 
-	private String checkWhoPlayerIsWin() {
+	private String checkWhichPlayerIsWin() {
 		if (player1.getMark().toString().equals(resultAnalyze.getWiningPlayerSign().toString())) {
 			return player1.getName() + " is Win";
 		}
