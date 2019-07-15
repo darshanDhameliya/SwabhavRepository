@@ -14,13 +14,15 @@ public class AddContactListener implements ActionListener {
 	private Long mobileNo;
 
 	public AddContactListener(AddContactFrame addContactFrame) {
-		this.addContactFrame=addContactFrame;
+		this.addContactFrame = addContactFrame;
 	}
+
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		name=addContactFrame.getContactName();
-		email=addContactFrame.getContactEmail();
-		mobileNo=addContactFrame.getContactMobileNo();
+		name = addContactFrame.getContactName();
+		email = addContactFrame.getContactEmail();
+		mobileNo = addContactFrame.getContactMobileNo();
+
 		try {
 			contactServices.addContact(name, email, mobileNo);
 		} catch (Exception e1) {
@@ -28,4 +30,5 @@ public class AddContactListener implements ActionListener {
 		}
 		addContactFrame.setVisible(false);
 	}
+
 }

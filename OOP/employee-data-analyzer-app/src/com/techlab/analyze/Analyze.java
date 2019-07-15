@@ -6,15 +6,15 @@ import java.util.HashMap;
 import com.techlab.employee.Employee;
 
 public class Analyze {
-	private ArrayList<Employee> employees;
+	private ArrayList<Employee> employeeList;
 	private Employee maxSalEmployee;
 
 	public Analyze(ArrayList<Employee> employees) {
-		this.employees = employees;
+		this.employeeList = employees;
 	}
 
 	public Employee maximumSalaryEmployee() {
-		for (Employee employee : employees) {
+		for (Employee employee : employeeList) {
 
 			if (checkNullValue(maxSalEmployee))
 				maxSalEmployee = employee;
@@ -35,7 +35,7 @@ public class Analyze {
 		HashMap<String, Integer> designationCount = new HashMap<String, Integer>();
 		String employeeDesignation;
 
-		for (Employee employee : employees) {
+		for (Employee employee : employeeList) {
 			employeeDesignation=employee.getDesignation();
 			
 			if (designationCount.containsKey(employeeDesignation)) {
@@ -53,7 +53,7 @@ public class Analyze {
 		HashMap<Integer, Integer> departmentCount = new HashMap<Integer, Integer>();
 		int employeeDepartment;
 		
-		for (Employee employee : employees) {
+		for (Employee employee : employeeList) {
 			employeeDepartment=employee.getDepartment();
 			
 			if (departmentCount.containsKey(employeeDepartment)) {
@@ -70,6 +70,6 @@ public class Analyze {
 	}
 
 	public ArrayList<Employee> getEmployees() {
-		return employees;
+		return employeeList;
 	}
 }
