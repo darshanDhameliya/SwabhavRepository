@@ -1,0 +1,16 @@
+<h1 [innerHtml]='"MultiBind Component"'></h1>
+Text :- <input type="text" [(ngModel)]=text><br> Font-Size :- <input type="number" [(ngModel)]=fontSize><br> ForGround-Color :-
+<select [(ngModel)]=fontColor>
+    <option value="red">Red</option>
+    <option value="yellow">Yellow</option>
+    <option value="blue">Blue</option>
+    <option value="green">Green</option>
+</select>
+<br> BackGround-Color :- <select [(ngModel)]=backgroungColor>
+    <option value="red">Red</option>
+    <option value="yellow">Yellow</option>
+    <option value="blue">Blue</option>
+    <option value="green">Green</option>
+</select>
+
+<p [innerHtml]=text [style.font-size.px]=fontSize [style.color]=fontColor [style.background-color]=backgroungColor></p>
