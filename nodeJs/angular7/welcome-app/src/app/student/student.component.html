@@ -1,0 +1,17 @@
+<h1 [innerHtml]='"Student Component"'></h1>
+<input type="text" [ngModel]="student.name" (ngModelChange)="onNameChange($event)" /> banana in the box :-
+<input type="text" [(ngModel)]="student.name" />
+<h3 [innerHtml]=student.name></h3>
+<h3 [innerHtml]=student.cgpa [style.background-color]="student.cgpa | cgpaBedge"></h3>
+<h3 [innerHtml]=student.location></h3>
+<h3 [innerHtml]=student.doj></h3>
+<img [src]=student.profilePic [style.height.px]=imageMinHeight [style.width.px]=imageMinWidth>
+<br>
+<button (click)="displayStudentList() ">Display Students</button>
+<div *ngFor="let student of studentList ">
+    <h3 [innerHtml]=student.name></h3>
+    <h3 [innerHtml]=student.cgpa [style.background-color]="student.cgpa | cgpaBedge"></h3>
+    <h3 [innerHtml]=student.location></h3>
+    <h3 [innerHtml]=student.doj></h3>
+    <img [src]=student.profilePic [style.height.px]=imageMinHeight [style.width.px]=imageMinWidth>
+</div>

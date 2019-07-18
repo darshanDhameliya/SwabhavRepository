@@ -1,18 +1,21 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
-import { AppRoutingModule } from './app-routing.module';
 import { WelcomeComponent } from './welcome/welcome.component';
+import { StudentComponent } from './student/student.component';
+import { CgpaBedge } from './pipes/cgpaBedge.pipe';
 
 @NgModule({
   declarations: [
-    WelcomeComponent
+    WelcomeComponent,
+    StudentComponent,
+    CgpaBedge
   ],
   imports: [
-    BrowserModule,
-    AppRoutingModule
+    BrowserModule,FormsModule
   ],
   providers: [],
-  bootstrap: [WelcomeComponent]
+  bootstrap: [WelcomeComponent,StudentComponent]
 })
 export class AppModule { }
