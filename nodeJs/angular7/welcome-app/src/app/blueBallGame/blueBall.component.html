@@ -1,0 +1,35 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<style>
+    .ball {
+        /* Green */
+        border: none;
+        color: black;
+        padding: 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        border-radius: 50%;
+        height: 70px;
+        width: 70px;
+    }
+</style>
+<div class="jumbotron text-center">
+    <h1>Blue Ball</h1>
+</div>
+<div id="mainMenu" [hidden]=mainMenuHidden>
+    <h3>Rules</h3>
+    <ol>
+        <li *ngFor="let rule of rules"> {{ rule }} </li>
+    </ol>
+    <button type="button" id="btnPlayGame" class="ball" [style.background-color]='"#2e86d9"' (click)="loadGame()">Play</button>
+</div>
+<div id="gameBoard" [hidden]=gameBoardHidden>
+    <div>Game Status : {{ gameStatus }}</div>
+    <div>chances : {{ chances }}</div>
+    <div class="col-lg-1 col-md-1 col-sm-2 col-xs-3" *ngFor="let ball of ballList">
+        <button id={{ball.ballNumber}} class="ball" [style.background-color]=ball.ballColor (click)="processPlayerInput($event)">{{ ball.ballNumber }}</button>
+    </div>
+</div>
