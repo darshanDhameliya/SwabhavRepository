@@ -1,6 +1,8 @@
 
-import { Component } from '@angular/core';
-import { IStudent } from "./IStudent";
+import { Component, Injectable } from '@angular/core';
+import { IStudent } from './IStudent';
+import { MathService } from '../services/mathService';
+@Injectable()
 @Component({
     selector: 'swabhav-student',
     templateUrl: './student.component.html'
@@ -10,7 +12,8 @@ export class StudentComponent {
     studentList: IStudent[];
     imageMinHeight: number = 100;
     imageMinWidth: number = 150;
-    constructor() {
+    cubeAnswer:string;
+    constructor(private service:MathService) {
         this.student = {
             name: "darshan",
             cgpa: 5.21,
@@ -36,5 +39,9 @@ export class StudentComponent {
     }
     onNameChange(newName){
         this.student.name=newName;
+    }
+    findCube(number)
+    { 
+        this.cubeAnswer=this.service.cubeEventNumber(number);
     }
 }

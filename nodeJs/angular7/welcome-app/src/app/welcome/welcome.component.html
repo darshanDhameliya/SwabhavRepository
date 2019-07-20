@@ -2,16 +2,27 @@
     <h1>
         {{ message }} <br> {{ 22/7 | number:'1.1-2' }} <br> {{ false ||'darshan' | uppercase}}
     </h1>
+    <hr>
 </section>
-<hr>
-<section hidden>
+<section>
     <swabhav-student></swabhav-student>
+    <hr>
 </section>
-<hr>
 <section hidden>
     <swabhav-multiBind></swabhav-multiBind>
+    <hr>
 </section>
-<hr>
-<section>
+<section hidden>
     <swabhav-blueBall-game></swabhav-blueBall-game>
+    <hr>
+</section>
+<section hidden>
+    <swabhav-toggle-button (stateChanged)='getToggleData($event)' [textValue]='"Toggle"' [offColor]='"red"' [onColor]='"green"'></swabhav-toggle-button>
+    <p>data from child :-
+        <span [innerHtml]="toggleData"></span></p>
+    <hr>
+</section>
+<section hidden>
+    <swabhav-star-rating [starRating]='"3.5"'></swabhav-star-rating>
+    <hr>
 </section>

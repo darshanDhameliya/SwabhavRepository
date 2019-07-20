@@ -7,6 +7,7 @@
 <h3 [innerHtml]=student.doj></h3>
 <img [src]=student.profilePic [style.height.px]=imageMinHeight [style.width.px]=imageMinWidth>
 <br>
+<hr>
 <button (click)="displayStudentList() ">Display Students</button>
 <div *ngFor="let student of studentList ">
     <h3 [innerHtml]=student.name></h3>
@@ -15,3 +16,7 @@
     <h3 [innerHtml]=student.doj></h3>
     <img [src]=student.profilePic [style.height.px]=imageMinHeight [style.width.px]=imageMinWidth>
 </div>
+<hr>
+<div>
+    <h3>Find Even Number Cube</h3>Number :- <input type="number" [(ngModel)]="number"> <button (click)="findCube(number)">Cube</button><br>
+    <span>Cube Answer :- </span><span [innerHtml]="cubeAnswer"></span></div>
