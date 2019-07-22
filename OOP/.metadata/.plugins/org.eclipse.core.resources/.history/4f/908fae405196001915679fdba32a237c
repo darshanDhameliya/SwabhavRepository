@@ -1,5 +1,0 @@
-package srp.solution;
-
-public interface Printer {
-
-}

@@ -1,7 +1,0 @@
-package com.techlab.isp.solution;
-
-public interface IWorkerEat {
-
-	public void startEat();
-	public void stopEat();
-}

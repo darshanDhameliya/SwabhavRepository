@@ -1,5 +1,0 @@
-package com.techlab.result.analyze;
-
-public enum Result {
-
-}

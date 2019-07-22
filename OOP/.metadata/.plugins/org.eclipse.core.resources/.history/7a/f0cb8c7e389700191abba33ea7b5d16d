@@ -1,6 +1,0 @@
-package com.techlab.singleton.simple.factory;
-
-public interface IAutoMobileFactory {
-
-	public IAutoMobile make() ;
-}

@@ -1,5 +1,0 @@
-package com.techlab.dip.violution;
-
-public interface ILoggable {
-
-}

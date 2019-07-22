@@ -1,5 +1,0 @@
-package com.techlab.Exception;
-
-public class AllReadyMarkCellException extends Exception{
-	
-}

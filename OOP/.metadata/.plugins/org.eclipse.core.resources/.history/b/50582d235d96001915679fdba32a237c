@@ -1,8 +1,0 @@
-package ocp.violation;
-
-public class FixedDeposit {
-	public String accNo;
-	public String name;
-	public double principal;
-	public float period;
-}

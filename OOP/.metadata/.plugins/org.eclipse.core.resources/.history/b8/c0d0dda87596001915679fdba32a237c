@@ -1,5 +1,0 @@
-package com.techlab.isp.solution;
-
-public interface IWorker extends IEatable,IWorkerWork{
-
-}

@@ -1,5 +1,0 @@
-package srp.solution;
-
-public class ConsolePrinter implements Printer{
-
-}

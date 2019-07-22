@@ -1,7 +1,0 @@
-package com.techlab.simple.factory.test;
-
-public class AutoMobileTest {
-	public static void main(String args[]) {
-		
-	}
-}

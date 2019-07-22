@@ -10,6 +10,9 @@ import { BlueBall } from './blueBallGame/blueBall.component';
 import { CgpaBedge } from './pipes/cgpaBedge.pipe';
 import { StarRatingComponent } from './starRating/star.rating.component';
 import { MathService } from './services/mathService';
+import { NumberApiService } from './services/numberApiService';
+import { NumberApiComponent } from './numberApi/numberApi.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -19,12 +22,13 @@ import { MathService } from './services/mathService';
     CgpaBedge,
     BlueBall,
     ToggleButtonComponent,
-    StarRatingComponent
+    StarRatingComponent,
+    NumberApiComponent
   ],
   imports: [
-    BrowserModule,FormsModule
+    BrowserModule,FormsModule,HttpClientModule
   ],
-  providers: [MathService],
-  bootstrap: [WelcomeComponent,StudentComponent,MultiBind,BlueBall]
+  providers: [MathService,NumberApiService],
+  bootstrap: [WelcomeComponent,StudentComponent,MultiBind,BlueBall,NumberApiComponent]
 })
 export class AppModule { }

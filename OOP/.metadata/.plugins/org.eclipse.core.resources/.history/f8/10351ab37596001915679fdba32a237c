@@ -1,7 +1,0 @@
-package com.techlab.isp.solution;
-
-public interface IWorkerWork {
-
-	public void startWork();
-	public void stopWork();
-}

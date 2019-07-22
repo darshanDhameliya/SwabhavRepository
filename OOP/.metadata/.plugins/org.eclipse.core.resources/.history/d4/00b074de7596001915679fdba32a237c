@@ -1,7 +1,0 @@
-package com.techlab.isp.solution;
-
-public interface EatableWorkable {
-
-	public void startWork();
-	public void stopWork();
-}
