@@ -16,8 +16,8 @@ public class Cell {
 
 	public void setCellState(Mark cell) throws AllReadyMarkCellException {
 		
-			if (!checkEmptyCell(cell))
-				throw new AllReadyMarkCellException("cell is allready fill");
+		if (!checkEmptyCell(cell))
+			throw new AllReadyMarkCellException("cell is allready fill");
 		
 		this.cell = cell;
 	}
