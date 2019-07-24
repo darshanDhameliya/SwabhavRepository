@@ -10,7 +10,6 @@ class fileOperation extends EventEmitter {
     read() {
 
         console.log("-----file-reading-start---------");
-        let that = this;
         let data = fs.readFileSync(this.fileName, 'utf8');
         this.emit('file_read', data);
         console.log("-----file-reading-over---------");
