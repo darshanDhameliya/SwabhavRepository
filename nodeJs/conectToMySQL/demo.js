@@ -36,6 +36,7 @@ con.connect(function(err) {
         if (err) throw err;
         console.log(result);
     });
-    con.end();
 });
+
+con.end();
 console.log('end program');
