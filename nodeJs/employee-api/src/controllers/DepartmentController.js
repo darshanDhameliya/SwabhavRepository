@@ -7,6 +7,7 @@ class DepartmentController {
         this.routeHandler();
     }
     routeHandler() {
+
         this._app.get('/api/v1/department', (req, res) => {
             this._departmentService.getDepartmentData()
                 .then((result) => {

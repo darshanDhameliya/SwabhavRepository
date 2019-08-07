@@ -4,6 +4,7 @@ class DepartmentService {
     constructor() {
         this._collection = null;
         let uri = "mongodb+srv://admin:root@cluster0-zn1vi.mongodb.net/test?retryWrites=true&w=majority";
+
         let client = new MongoClient(uri, { useNewUrlParser: true });
         client.connect((err, db) => {
             if (err) throw err;

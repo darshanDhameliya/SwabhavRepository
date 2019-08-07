@@ -6,6 +6,8 @@ let io = require('socket.io')(http);
 app.use(Express.static('public'));
 
 io.on('connection', (socket) => {
+    console.log('A new websocket connection has been established');
+
     socket.on('chat message', function(msg) {
         console.log('client : ' + msg);
 

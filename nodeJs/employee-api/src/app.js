@@ -5,8 +5,6 @@ let BodyParser = require('body-parser');
 let Cors = require('cors');
 
 let app = Express();
-app.use(Cors());
-app.use(BodyParser.json());
 
 new DepartmentController(app);
 // new EmployeeController(app);
