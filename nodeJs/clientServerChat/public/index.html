@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Socket.IO chat</title>
+</head>
+
+<body>
+    <input type="button" id="btnHello" value="Hello">
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+    <script>
+        var socket = io();
+        socket.on('chat message', function(msg) {
+            console.log('server : ' + msg);
+        });
+        $('#btnHello').click(function() {
+            socket.emit('chat message', 'hello server');
+            return false;
+        });
+    </script>
+</body>
+
+</html>
