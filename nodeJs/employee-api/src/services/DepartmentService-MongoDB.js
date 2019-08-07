@@ -40,11 +40,15 @@ class DepartmentService {
             }).toArray((err, result) => {
                 if (err)
                     reject(err);
-                resolve(result);
+                result.forEach((element) => {
+                    resolve(element);
+                });
+
             });
         });
     }
     addDepartmentData(department) {
+        department['EMP'] = [];
         return new Promise((resolve, reject) => {
             this._collection.insertOne(department, (err, result) => {
                 if (err)
