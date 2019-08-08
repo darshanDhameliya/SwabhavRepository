@@ -6,16 +6,28 @@
 </head>
 
 <body>
-    <input type="button" id="btnHello" value="Hello">
+    <input type="text" id="txtUserName" name="UserName" placeholder="User Name">
+    <br><input type="text" id="txtMessage" name="Message" placeholder="Message">
+    <br><input type="button" id="btnSend" value="Send">
     <script src="/socket.io/socket.io.js"></script>
     <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
     <script>
-        var socket = io();
+        let socket = io();
+        let socketId = null;
+        socket.on('connect', () => {
+            socketId = socket.io.engine.id;
+            console.log('socket id : ' + socketId);
+        });
         socket.on('chat message', function(msg) {
             console.log('server : ' + msg);
         });
-        $('#btnHello').click(function() {
-            socket.emit('chat message', 'hello server');
+        $('#btnSend').click(function() {
+            let data = {
+                SOCKETID: socketId,
+                USERNAME: $('#txtUserName').val(),
+                MESSAGE: $('#txtMessage').val()
+            };
+            socket.emit('chat message', data);
             return false;
         });
     </script>
