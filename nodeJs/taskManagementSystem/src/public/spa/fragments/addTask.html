@@ -1,0 +1,35 @@
+<center>
+        <form>
+            <fieldset>
+                <legend>Add Task</legend>
+                <table>
+                    <tr>
+                        <td><label>Tittle : </label></td>
+                        <td> <input type="text" ng-model="tittle"></td>
+                    </tr>
+                    <tr>
+                        <td><label>Discription :</label></td>
+                        <td><input type="text" ng-model="discription"></td>
+                    </tr>
+                    <tr>
+                        <td><label>Start Date : </label></td>
+                        <td><input type="date" ng-model="startDate"></td>
+                    </tr>
+                    <tr>
+                        <td><label>Due Date : </label></td>
+                        <td><input type="date" ng-model="dueDate"></td>
+                    </tr>
+                    <tr>
+                        <td><label>Assignee : </label></td>
+                        <td><input type="date" ng-model="assignee"></td>
+                    </tr>
+                    <tr>
+                        <td><label>Priority : </label></td>
+                        <td><input type="date" ng-model="priority"></td>
+                    </tr>
+                </table>
+                <br>
+                <input type="button" value="Add Task" ng-click=addTask()>
+            </fieldset>
+        </form>
+    </center>

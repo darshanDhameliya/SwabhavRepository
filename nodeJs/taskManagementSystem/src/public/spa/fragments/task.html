@@ -1,0 +1,11 @@
+<div style="margin:10px;display: inline-block ;" ng-repeat="task in taskList">
+    <div ng-click="displaySubTask(task._id)" ng-style="{'background-color':'{{ task.priority | priorityFilter }}','border': '{{ task.isComplated | isComplatedFilter }}','padding':' 10px 10px 10px 10px'}">
+        <p ng-repeat="(key, val) in task">
+            {{ key }}:{{ val }}
+        </p>
+        <center>
+            <input type="button" value="Edit">
+            <input type="button" value="Delete">
+        </center>
+    </div>
+</div>
