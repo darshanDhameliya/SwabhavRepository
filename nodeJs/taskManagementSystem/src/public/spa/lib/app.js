@@ -1,5 +1,5 @@
 let taskManagementApp = angular.module('taskManagementApp', ['ngRoute', 'taskManagementLib']);
-
+let sessionObject = {};
 taskManagementApp.config(['$routeProvider', function ($routeProvider) {
     $routeProvider
         .when('/', {
@@ -14,7 +14,11 @@ taskManagementApp.config(['$routeProvider', function ($routeProvider) {
             templateUrl: 'fragments/task.html',
             controller: 'taskController'
         })
-        .when('/:taskId/subTask', {
+        .when('/addTask', {
+            templateUrl: 'fragments/addTask.html',
+            controller: 'addTaskController'
+        })
+        .when('/subTask', {
             templateUrl: 'fragments/subTask.html',
             controller: 'subTaskController'
         })
@@ -32,7 +36,8 @@ taskManagementApp.controller('logInController', ['$scope', '$rootScope', 'taskMa
             })
             .then(function (result) {
                 if (result.data._id) {
-                    $window.sessionStorage.setItem('taskManagementSystem', result.data._id);
+                    sessionObject.userId = result.data._id;
+                    $window.sessionStorage.setItem('taskManagementSystem', JSON.stringify(sessionObject));
                     $location.path('/task');
                 }
                 if (!result.data._id)
@@ -70,25 +75,58 @@ taskManagementApp.controller('registerController', ['$scope', 'taskManagementFac
 taskManagementApp.controller('taskController', ['$scope', '$rootScope', 'taskManagementFactory', '$window', '$location', function ($scope, $rootScope, taskManagementFactory, $window, $location) {
     $rootScope.headerVisible = false;
     $rootScope.navigationBarVisible = true;
-    let userId = $window.sessionStorage.getItem("taskManagementSystem");
-    taskManagementFactory.displayTask(userId)
+    sessionObject = JSON.parse($window.sessionStorage.getItem("taskManagementSystem"));
+    taskManagementFactory.displayTask(sessionObject.userId)
         .then(function (result) {
             $scope.taskList = result.data;
         })
         .catch(function (error) {
             console.log(error);
         })
+    $scope.addTask = function () {
+        $location.path('/addTask');
+    };
+
     $scope.displaySubTask = function (taskId) {
-        $location.path('/'+taskId+'/subTask');
+        sessionObject.taskId = taskId;
+        $window.sessionStorage.setItem('taskManagementSystem', JSON.stringify(sessionObject));
+        $location.path('/subTask');
     };
 }]);
-taskManagementApp.controller('subTaskController', ['$scope', '$rootScope', 'taskManagementFactory', '$window', '$routeParams', function ($scope, $rootScope, taskManagementFactory, $window, $routeParams) {
-    let taskId = $routeParams.taskId;
-    let userId = $window.sessionStorage.getItem("taskManagementSystem");
-    
-    taskManagementFactory.displaySubTask(userId, taskId)
+
+taskManagementApp.controller('addTaskController', ['$scope', 'taskManagementFactory', '$window', '$location', function ($scope, taskManagementFactory, $window, $location) {
+    sessionObject = JSON.parse($window.sessionStorage.getItem("taskManagementSystem"));
+    $scope.prioritys = ['important', 'idel'];
+
+    $scope.addTask = function () {
+        let task = {};
+        task.tittle = $scope.tittle;
+        task.discription = $scope.discription;
+        task.startDate = $scope.startDate;
+        task.dueDate = $scope.dueDate;
+        task.assignee = $scope.assignee;
+        task.priority = $scope.priority;
+
+        taskManagementFactory.addTask(sessionObject.userId, task)
+            .then(function (result) {
+                $window.alert(result.data.message);
+                $location.path('/task');
+            })
+            .catch(function (error) {
+                console.log(error);
+            })
+    }
+}]);
+
+taskManagementApp.controller('subTaskController', ['$scope', 'taskManagementFactory', '$window', function ($scope, taskManagementFactory, $window) {
+    sessionObject = JSON.parse($window.sessionStorage.getItem("taskManagementSystem"));
+
+    taskManagementFactory.displaySubTask(sessionObject.userId, sessionObject.taskId)
         .then(function (result) {
-            $scope.subTaskList=result.data;
+            if (result.data[0] != null)
+                $scope.subTaskList = result.data;
+            if (result.data[0]==null)
+            $window.alert('Sub Task Not Found');
         })
         .catch(function (error) {
             console.log(error);
