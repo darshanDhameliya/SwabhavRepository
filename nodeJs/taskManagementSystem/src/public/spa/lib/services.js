@@ -47,9 +47,53 @@ taskManagementLib.factory('taskManagementFactory',['$q','$http',function($q,$htt
             })
         });
     };
+    services.getTaskById=function(userId,taskId){
+        return $q(function(resolved,rejected){
+            $http.get(url+"user/"+userId+"/task/"+taskId)
+            .then(function(result){
+                resolved(result);
+            })
+            .catch(function(error){
+                rejected(error);
+            })
+        });
+    };
+    services.editTask=function(userId,taskId,data){
+        return $q(function(resolved,rejected){
+            $http.put(url+"user/"+userId+"/task/"+taskId,data)
+            .then(function(result){
+                resolved(result);
+            })
+            .catch(function(error){
+                rejected(error);
+            })
+        });
+    };
+    services.deleteTask=function(userId,taskId){
+        return $q(function(resolved,rejected){
+            $http.delete(url+"user/"+userId+"/task/"+taskId)
+            .then(function(result){
+                resolved(result);
+            })
+            .catch(function(error){
+                rejected(error);
+            })
+        });
+    };
     services.displaySubTask=function(userId,taskId){
         return $q(function(resolved,rejected){
             $http.get(url+"user/"+userId+"/task/"+taskId+"/subTask")
+            .then(function(result){
+                resolved(result);
+            })
+            .catch(function(error){
+                rejected(error);
+            })
+        });
+    };
+    services.deleteSubTask=function(userId,taskId,subTaskId){
+        return $q(function(resolved,rejected){
+            $http.delete(url+"user/"+userId+"/task/"+taskId+"/subTask/"+subTaskId)
             .then(function(result){
                 resolved(result);
             })

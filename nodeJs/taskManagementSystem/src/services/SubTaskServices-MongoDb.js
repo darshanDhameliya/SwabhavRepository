@@ -2,14 +2,6 @@ let schema = require('../schema');
 let mongoose = require('mongoose');
 class SubTaskServices {
     constructor() {
-        let uri = "mongodb+srv://admin:root@cluster0-zn1vi.mongodb.net/task_management?retryWrites=true&w=majority";
-        mongoose.set('useCreateIndex', true);
-        mongoose.connect(uri, { useNewUrlParser: true }, (err) => {
-            if (err)
-                throw err;
-            console.log('sub task services : mongoDb connected!');
-
-        });
         this._myModel = mongoose.model('user', schema);
     }
     addSubTask(userId, taskId, subTask) {

@@ -5,9 +5,19 @@ let UserController = require('./controllers/UserController');
 let TaskController = require('./controllers/TaskController');
 let SubTaskController = require('./controllers/SubTaskController');
 let swaggerJSDoc = require('swagger-jsdoc');
+let mongoose = require('mongoose');
 
 let app = Express();
 let PORT = 8080;
+
+let uri = "mongodb+srv://admin:root@cluster0-zn1vi.mongodb.net/task_management?retryWrites=true&w=majority";
+mongoose.set('useCreateIndex', true);
+mongoose.connect(uri, { useNewUrlParser: true }, (err) => {
+    if (err)
+        throw err;
+    console.log('mongoDb connected!');
+
+});
 
 app.use(BodyParser.json());
 app.use(Express.static('public'));

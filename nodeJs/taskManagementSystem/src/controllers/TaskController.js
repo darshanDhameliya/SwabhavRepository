@@ -13,7 +13,7 @@ let TaskServices = require('../services/TaskServices-MongoDb');
  *          properties:
  *              tittle:
  *                  type: string
- *              discription:
+ *              description:
  *                  type: string
  *              startDate:
  *                  type: date
@@ -27,7 +27,7 @@ let TaskServices = require('../services/TaskServices-MongoDb');
  *          properties:
  *              tittle:
  *                  type: string
- *              discription:
+ *              description:
  *                  type: string
  *              startDate:
  *                  type: date

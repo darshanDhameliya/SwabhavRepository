@@ -3,15 +3,6 @@ let mongoose = require('mongoose');
 
 class UserServices {
     constructor() {
-
-        let uri = "mongodb+srv://admin:root@cluster0-zn1vi.mongodb.net/task_management?retryWrites=true&w=majority";
-        mongoose.set('useCreateIndex', true);
-        mongoose.connect(uri, { useNewUrlParser: true }, (err) => {
-            if (err)
-                throw err;
-            console.log('user services : mongoDb connected!');
-
-        });
         this._myModel = mongoose.model('user', schema);
     }
     userRegister(user) {

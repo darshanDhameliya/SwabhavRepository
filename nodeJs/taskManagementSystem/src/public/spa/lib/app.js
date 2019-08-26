@@ -18,6 +18,10 @@ taskManagementApp.config(['$routeProvider', function ($routeProvider) {
             templateUrl: 'fragments/addTask.html',
             controller: 'addTaskController'
         })
+        .when('/editTask', {
+            templateUrl: 'fragments/editTask.html',
+            controller: 'editTaskController'
+        })
         .when('/subTask', {
             templateUrl: 'fragments/subTask.html',
             controller: 'subTaskController'
@@ -76,15 +80,43 @@ taskManagementApp.controller('taskController', ['$scope', '$rootScope', 'taskMan
     $rootScope.headerVisible = false;
     $rootScope.navigationBarVisible = true;
     sessionObject = JSON.parse($window.sessionStorage.getItem("taskManagementSystem"));
-    taskManagementFactory.displayTask(sessionObject.userId)
-        .then(function (result) {
-            $scope.taskList = result.data;
-        })
-        .catch(function (error) {
-            console.log(error);
-        })
+
+
+    let displayTask = function () {
+        taskManagementFactory.displayTask(sessionObject.userId)
+            .then(function (result) {
+                if (result.data[0] != null)
+                    $scope.taskList = result.data;
+                if (result.data[0] == null)
+                    $window.alert('Task Not Found');
+            })
+            .catch(function (error) {
+                console.log(error);
+            })
+    };
+
+    displayTask();
     $scope.addTask = function () {
         $location.path('/addTask');
+    };
+
+    $scope.deleteTask = function (taskId) {
+        let deleteData = confirm("Are you sure you want to delete this?");
+        if (deleteData == true) {
+            taskManagementFactory.deleteTask(sessionObject.userId, taskId)
+                .then(function (result) {
+                    displayTask();
+                    $window.alert(result.data.message);
+                })
+                .catch(function (error) {
+                    console.log(error);
+                })
+        }
+    };
+    $scope.editTask = function (taskId) {
+        sessionObject.taskId = taskId;
+        $window.sessionStorage.setItem('taskManagementSystem', JSON.stringify(sessionObject));
+        $location.path('/editTask');
     };
 
     $scope.displaySubTask = function (taskId) {
@@ -101,7 +133,7 @@ taskManagementApp.controller('addTaskController', ['$scope', 'taskManagementFact
     $scope.addTask = function () {
         let task = {};
         task.tittle = $scope.tittle;
-        task.discription = $scope.discription;
+        task.description = $scope.description;
         task.startDate = $scope.startDate;
         task.dueDate = $scope.dueDate;
         task.assignee = $scope.assignee;
@@ -117,20 +149,75 @@ taskManagementApp.controller('addTaskController', ['$scope', 'taskManagementFact
             })
     }
 }]);
-
-taskManagementApp.controller('subTaskController', ['$scope', 'taskManagementFactory', '$window', function ($scope, taskManagementFactory, $window) {
+taskManagementApp.controller('editTaskController', ['$scope', 'taskManagementFactory', '$window', '$location', function ($scope, taskManagementFactory, $window, $location) {
     sessionObject = JSON.parse($window.sessionStorage.getItem("taskManagementSystem"));
+    $scope.prioritys = ['important', 'idel'];
 
-    taskManagementFactory.displaySubTask(sessionObject.userId, sessionObject.taskId)
+    taskManagementFactory.getTaskById(sessionObject.userId, sessionObject.taskId)
         .then(function (result) {
-            if (result.data[0] != null)
-                $scope.subTaskList = result.data;
-            if (result.data[0]==null)
-            $window.alert('Sub Task Not Found');
+            $scope.tittle = result.data.tittle;
+            $scope.description = result.data.description;
+            $scope.startDate = result.data.startDate;
+            $scope.dueDate = result.data.dueDate;
+            $scope.assignee = result.data.assignee;
+            $scope.priority = result.data.priority;
+            $scope.isComplated = result.data.isComplated;
         })
         .catch(function (error) {
             console.log(error);
         })
+
+    // $scope.addTask = function () {
+    //     let task = {};       
+    //     task.tittle = $scope.tittle;
+    //     task.description = $scope.description;
+    //     task.startDate = $scope.startDate;
+    //     task.dueDate = $scope.dueDate;
+    //     task.assignee = $scope.assignee;
+    //     task.priority = $scope.priority;
+
+    //     taskManagementFactory.addTask(sessionObject.userId, task)
+    //         .then(function (result) {
+    //             $window.alert(result.data.message);
+    //             $location.path('/task');
+    //         })
+    //         .catch(function (error) {
+    //             console.log(error);
+    //         })
+    // }
+}]);
+
+taskManagementApp.controller('subTaskController', ['$scope', 'taskManagementFactory', '$window', function ($scope, taskManagementFactory, $window) {
+    sessionObject = JSON.parse($window.sessionStorage.getItem("taskManagementSystem"));
+
+    let displaySubTask = function () {
+        taskManagementFactory.displaySubTask(sessionObject.userId, sessionObject.taskId)
+            .then(function (result) {
+                if (result.data[0] != null)
+                    $scope.subTaskList = result.data;
+                if (result.data[0] == null)
+                    $window.alert('Sub Task Not Found');
+            })
+            .catch(function (error) {
+                console.log(error);
+            })
+    };
+
+    displaySubTask();
+
+    $scope.deleteSubTask = function (subTaskId) {
+        let deleteData = confirm("Are you sure you want to delete this?");
+        if (deleteData == true) {
+            taskManagementFactory.deleteSubTask(sessionObject.userId, sessionObject.taskId, subTaskId)
+                .then(function (result) {
+                    displaySubTask();
+                    $window.alert(result.data.message);
+                })
+                .catch(function (error) {
+                    console.log(error);
+                })
+        }
+    };
 }]);
 taskManagementApp.filter('priorityFilter', function () {
     return function (priority) {
