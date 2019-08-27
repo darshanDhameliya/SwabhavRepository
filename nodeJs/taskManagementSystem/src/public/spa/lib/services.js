@@ -25,6 +25,17 @@ taskManagementLib.factory('taskManagementFactory',['$q','$http',function($q,$htt
             })
         });
     };
+    services.getUserById=function(userId){
+        return $q(function(resolved,rejected){
+            $http.get(url+"user/"+userId)
+            .then(function(result){
+                resolved(result);
+            })
+            .catch(function(error){
+                rejected(error);
+            })
+        });
+    };
     services.displayTask=function(userId){
         return $q(function(resolved,rejected){
             $http.get(url+"user/"+userId+"/task")
@@ -83,6 +94,17 @@ taskManagementLib.factory('taskManagementFactory',['$q','$http',function($q,$htt
     services.displaySubTask=function(userId,taskId){
         return $q(function(resolved,rejected){
             $http.get(url+"user/"+userId+"/task/"+taskId+"/subTask")
+            .then(function(result){
+                resolved(result);
+            })
+            .catch(function(error){
+                rejected(error);
+            })
+        });
+    };
+    services.addSubTask=function(userId,taskId,data){
+        return $q(function(resolved,rejected){
+            $http.post(url+"user/"+userId+"/task/"+taskId+"/subTask",data)
             .then(function(result){
                 resolved(result);
             })

@@ -1,10 +1,11 @@
+<input type="button" value="Add subTask" ng-click="addSubTask()"><br>
 <div style="margin:10px;display: inline-block ;" ng-repeat="subTask in subTaskList">
     <div ng-style="{'background-color':'#d4d1c9','border': '{{ subTask.isComplated | isComplatedFilter }}','padding':' 10px 10px 10px 10px'}">
         <p ng-repeat="(key, val) in subTask">
             {{ key }}:{{ val }}
         </p>
         <center>
-            <input type="button" value="Edit">
+            <input type="button" value="Edit" ng-click='editSubTask(subTask._id)'>
             <input type="button" value="Delete" ng-click=deleteSubTask(subTask._id)>
         </center>
     </div>

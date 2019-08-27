@@ -21,18 +21,29 @@ class UserServices {
             '","isDelete":' + false +
             '}';
         return new Promise((resolve, reject) => {
-            this._myModel.findOne({ 'contactInfo.emailId': user.emailId, isDelete: false })
+            this._myModel.findOne({
+                    'contactInfo.emailId': user.emailId,
+                    isDelete: false
+                })
                 .select('_id')
                 .exec((err, result) => {
                     if (err)
                         reject(err);
                     if (result)
-                        reject(JSON.parse('{"message": "emaill already exicute."}'));
+                        reject(JSON.parse('{"message": "email already exicute."}'));
                     if (!err && !result) {
                         new this._myModel(JSON.parse(data)).save((err, result) => {
                             if (err)
                                 reject(err);
-                            resolve(result);
+                            if (result) {
+                                userLogin('{"emailId":"' + user.emailId +
+                                    '","password":"' + user.password +
+                                    '"}').then((result) => {
+                                    resolve(result)
+                                }).catch((error) => {
+                                    reject(error)
+                                });
+                            }
                         });
                     }
                 });
@@ -41,7 +52,11 @@ class UserServices {
     }
     userLogin(loginDetail) {
         return new Promise((resolve, reject) => {
-            this._myModel.findOne({ 'contactInfo.emailId': loginDetail.emailId, 'password': loginDetail.password, isDelete: false })
+            this._myModel.findOne({
+                    'contactInfo.emailId': loginDetail.emailId,
+                    'password': loginDetail.password,
+                    isDelete: false
+                })
                 .select('_id')
                 .exec((err, result) => {
                     if (err)
@@ -54,7 +69,9 @@ class UserServices {
     }
     getUserById(userId) {
         return new Promise((resolve, reject) => {
-            this._myModel.findOne({ '_id': userId })
+            this._myModel.findOne({
+                    '_id': userId
+                })
                 .select("firstName lastName gender birthOfDate contactInfo")
                 .exec((err, result) => {
                     console.log();
@@ -66,7 +83,11 @@ class UserServices {
     }
     updateUser(userId, newData) {
         return new Promise((resolve, reject) => {
-            this._myModel.updateOne({ '_id': userId }, newData, { upsert: true }, (err, doc) => {
+            this._myModel.updateOne({
+                '_id': userId
+            }, newData, {
+                upsert: true
+            }, (err, doc) => {
                 if (err)
                     reject(err);
                 resolve(doc);
@@ -75,7 +96,13 @@ class UserServices {
     }
     deleteUser(userId) {
         return new Promise((resolve, reject) => {
-            this._myModel.update({ '_id': userId }, { 'isDelete': true }, { upsert: true }, (err, doc) => {
+            this._myModel.update({
+                '_id': userId
+            }, {
+                'isDelete': true
+            }, {
+                upsert: true
+            }, (err, doc) => {
                 if (err)
                     reject(err);
                 resolve(doc);

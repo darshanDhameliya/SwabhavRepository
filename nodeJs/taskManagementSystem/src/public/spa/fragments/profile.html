@@ -1,7 +1,7 @@
 <center>
     <form>
         <fieldset>
-            <legend>Register</legend>
+            <legend>Profile</legend>
             <table>
                 <tr>
                     <td><label>First Name : </label></td>
@@ -31,10 +31,6 @@
                     <td><input type="email" ng-model="emailId"></td>
                 </tr>
                 <tr>
-                    <td><label>Password : </label></td>
-                    <td><input type="password" ng-model="password"></td>
-                </tr>
-                <tr>
                     <td><label>Address : </label></td>
                     <td><input type="text" ng-model="country" placeholder="Country"></td>
                 </tr>
@@ -51,8 +47,7 @@
 
             </table>
             <br>
-            <input type="button" value="Register" ng-click=userRegister()><br>
-            <a href="#!/login">LOG IN</a>
+            <input type="button" value="Update" ng-click=profileUpdate()><br>
         </fieldset>
     </form>
 </center>

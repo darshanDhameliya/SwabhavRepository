@@ -91,7 +91,7 @@ class UserController {
          *           $ref: '#/definitions/user'
          *     responses:
          *       200:
-         *         description: Successfully created
+         *         description: user's id
          */
         this._app.post('/api/v1/register', (req, res) => {
             this._userServices.userRegister(req.body)
