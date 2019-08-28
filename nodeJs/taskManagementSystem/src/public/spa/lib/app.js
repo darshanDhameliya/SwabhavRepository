@@ -269,7 +269,7 @@ taskManagementApp.controller('addSubTaskController', ['$scope', '$rootScope', 't
             })
     }
 }]);
-taskManagementApp.controller('editSubTaskController', ['$scope', '$rootScope', 'taskManagementFactory', '$window', '$routeParams', function ($scope, $rootScope, taskManagementFactory, $window, $routeParams) {
+taskManagementApp.controller('editSubTaskController', ['$scope', '$rootScope', 'taskManagementFactory', '$window', '$routeParams','$location', function ($scope, $rootScope, taskManagementFactory, $window, $routeParams,$location) {
     $rootScope.headerVisible = false;
     $rootScope.navigationBarVisible = true;
     sessionObject = JSON.parse($window.sessionStorage.getItem("taskManagementSystem"));
@@ -289,18 +289,17 @@ taskManagementApp.controller('editSubTaskController', ['$scope', '$rootScope', '
         })
         $scope.editSubTask=function(){
             
-            taskManagementFactory.editTask(sessionObject.userId,$routeParams.taskId,{
+            taskManagementFactory.editSubTask(sessionObject.userId,sessionObject.taskId, $routeParams.subTaskId,{
               "tittle": $scope.tittle,
               "description": $scope.description,
               "startDate": $scope.startDate,
               "dueDate": $scope.dueDate,
               "assignee": $scope.assignee,
-              "priority": $scope.priority,
               "isComplated": $scope.isComplated
             })
             .then((result)=>{
               $window.alert(result.data.message);
-              $location.path('/task');
+              $location.path('/subTask');
             })
             .catch((error)=>{
                 console.log(error);

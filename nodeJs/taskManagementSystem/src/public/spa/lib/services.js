@@ -135,5 +135,16 @@ taskManagementLib.factory('taskManagementFactory',['$q','$http',function($q,$htt
             })
         });
     };
+    services.editSubTask=function(userId,taskId,subTaskId,data){
+        return $q(function(resolved,rejected){
+            $http.put(url+"user/"+userId+"/task/"+taskId+'/subTask/'+subTaskId,data)
+            .then(function(result){
+                resolved(result);
+            })
+            .catch(function(error){
+                rejected(error);
+            })
+        });
+    };
     return services;
 }]);
