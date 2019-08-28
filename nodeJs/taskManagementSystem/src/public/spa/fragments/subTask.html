@@ -6,6 +6,7 @@
             <h4><label>Description :- </label>{{ subTask.description }}</h4>
             <label>Start Date :- </label>{{ subTask.startDate | date : mm/dd/yyyy }}<br>
             <label>Due Date :- </label>{{ subTask.dueDate | date : mm/dd/yyyy }}<br>
+            <label>Assignee :- </label>{{ subTask.assignee }}<br>
             <label>Complated :- </label>{{ subTask.isComplated }}
         </p>
         <center>

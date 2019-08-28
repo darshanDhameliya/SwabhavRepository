@@ -1,15 +1,20 @@
 <center>
-    <form>
+    <form name="logIn" novalidate>
         <fieldset>
             <legend>Log In</legend>
             <table>
                 <tr>
                     <td>Email Id :- </td>
-                    <td><input type="text" ng_model="emailId"></td>
+                    <td><input type="email" name="emailId" ng_model="emailId" required>
+                        <span style="color:red" ng-show="logIn.emailId.$touched && logIn.emailId.$error.required">The emailId is required.</span>
+                        <span style="color:red" ng-show="logIn.emailId.$error.email">Not valid email!</span>
+                    </td>
                 </tr>
                 <tr>
                     <td>Password : -</td>
-                    <td><input type="password" ng-model=password></td>
+                    <td><input type="password" name="password" ng-model="password" required>
+                        <span style="color:red" ng-show="logIn.password.$touched && logIn.password.$invalid">The password is required.</span>
+                    </td>
                 </tr>
             </table><br>
             <input type="button" value="Log In" ng-click="userLogIn()"><br>
