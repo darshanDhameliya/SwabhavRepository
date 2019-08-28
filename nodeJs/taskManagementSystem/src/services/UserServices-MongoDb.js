@@ -82,10 +82,25 @@ class UserServices {
         });
     }
     updateUser(userId, newData) {
+
+          let data = '{"firstName":"' + newData.firstName +
+          '","lastName":"' + newData.lastName +
+          '","gender":"' + newData.gender +
+          '","birthOfDate":"' + newData.birthOfDate +
+          '","contactInfo":{"contactNo":' + newData.contactNo +
+          ',"address":{"country":"' + newData.country +
+          '","state":"' + newData.state +
+          '","city":"' + newData.city +
+          '","street":"' + newData.street +
+          '","houseNumber":"' + newData.houseNumber +
+          '"},"emailId":"' + newData.emailId +
+          '"}}';
+
+          
         return new Promise((resolve, reject) => {
             this._myModel.updateOne({
                 '_id': userId
-            }, newData, {
+            }, JSON.parse(data), {
                 upsert: true
             }, (err, doc) => {
                 if (err)

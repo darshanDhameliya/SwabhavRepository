@@ -165,7 +165,7 @@ taskManagementApp.controller('addTaskController', ['$scope', '$rootScope', 'task
             })
     }
 }]);
-taskManagementApp.controller('editTaskController', ['$scope', '$rootScope', 'taskManagementFactory', '$window', '$routeParams', function ($scope, $rootScope, taskManagementFactory, $window, $routeParams) {
+taskManagementApp.controller('editTaskController', ['$scope', '$rootScope', 'taskManagementFactory', '$window', '$routeParams','$location', function ($scope, $rootScope, taskManagementFactory, $window, $routeParams,$location) {
     $rootScope.headerVisible = false;
     $rootScope.navigationBarVisible = true;
     sessionObject = JSON.parse($window.sessionStorage.getItem("taskManagementSystem"));
@@ -175,8 +175,8 @@ taskManagementApp.controller('editTaskController', ['$scope', '$rootScope', 'tas
         .then(function (result) {
             $scope.tittle = result.data.tittle;
             $scope.description = result.data.description;
-            $scope.startDate = result.data.startDate;
-            $scope.dueDate = result.data.dueDate;
+            $scope.startDate = new Date(result.data.startDate);
+            $scope.dueDate = new Date(result.data.dueDate);
             $scope.assignee = result.data.assignee;
             $scope.priority = result.data.priority;
             $scope.isComplated = result.data.isComplated;
@@ -184,6 +184,26 @@ taskManagementApp.controller('editTaskController', ['$scope', '$rootScope', 'tas
         .catch(function (error) {
             console.log(error);
         })
+
+        $scope.editTask=function(){
+            
+              taskManagementFactory.editTask(sessionObject.userId,$routeParams.taskId,{
+                "tittle": $scope.tittle,
+                "description": $scope.description,
+                "startDate": $scope.startDate,
+                "dueDate": $scope.dueDate,
+                "assignee": $scope.assignee,
+                "priority": $scope.priority,
+                "isComplated": $scope.isComplated
+              })
+              .then((result)=>{
+                $window.alert(result.data.message);
+                $location.path('/task');
+              })
+              .catch((error)=>{
+                  console.log(error);
+              });
+        };
 }]);
 
 taskManagementApp.controller('subTaskController', ['$scope', '$rootScope', 'taskManagementFactory', '$window', '$location', function ($scope, $rootScope, taskManagementFactory, $window, $location) {
@@ -258,42 +278,91 @@ taskManagementApp.controller('editSubTaskController', ['$scope', '$rootScope', '
     taskManagementFactory.getTaskById(sessionObject.userId, sessionObject.taskId, $routeParams.subTaskId)
         .then(function (result) {
             $scope.tittle = result.data.tittle;
-            $scope.description = result.data.description;
-            $scope.startDate = result.data.startDate;
-            $scope.dueDate = result.data.dueDate;
+            $scope.description =result.data.description;
+            $scope.startDate = new Date(result.data.startDate);
+            $scope.dueDate = new Date(result.data.dueDate);
             $scope.assignee = result.data.assignee;
             $scope.isComplated = result.data.isComplated;
         })
         .catch(function (error) {
             console.log(error);
         })
+        $scope.editSubTask=function(){
+            
+            taskManagementFactory.editTask(sessionObject.userId,$routeParams.taskId,{
+              "tittle": $scope.tittle,
+              "description": $scope.description,
+              "startDate": $scope.startDate,
+              "dueDate": $scope.dueDate,
+              "assignee": $scope.assignee,
+              "priority": $scope.priority,
+              "isComplated": $scope.isComplated
+            })
+            .then((result)=>{
+              $window.alert(result.data.message);
+              $location.path('/task');
+            })
+            .catch((error)=>{
+                console.log(error);
+            });
+      };
 }]);
 
-taskManagementApp.controller('profileController', ['$scope', '$rootScope', 'taskManagementFactory', '$window', '$routeParams', function ($scope, $rootScope, taskManagementFactory, $window, $routeParams) {
+taskManagementApp.controller('profileController', ['$scope', '$rootScope', 'taskManagementFactory', '$window', '$location', function ($scope, $rootScope, taskManagementFactory, $window, $location) {
     $rootScope.headerVisible = false;
     $rootScope.navigationBarVisible = true;
     sessionObject = JSON.parse($window.sessionStorage.getItem("taskManagementSystem"));
 
-    taskManagementFactory.getTaskById(sessionObject.userId, sessionObject.taskId, $routeParams.subTaskId)
+    taskManagementFactory.getUserById(sessionObject.userId).
+    then(function(result){
+        console.log(result);
+        
+        $scope.firstName=result.data.firstName;
+        $scope.lastName=result.data.lastName;
+        $scope.gender=result.data.gender;
+        $scope.birthOfDate=new Date(result.data.birthOfDate);
+        $scope.contactNo=result.data.contactInfo.contactNo;
+        $scope.country=result.data.contactInfo.address.country;
+        $scope.state=result.data.contactInfo.address.state;
+        $scope.city=result.data.contactInfo.address.city;
+        $scope.street=result.data.contactInfo.address.street;
+        $scope.houseNumber=result.data.contactInfo.address.houseNumber;
+        $scope.emailId=result.data.contactInfo.emailId;
+    })
+    .catch(function(error){
+        console.log(error);
+    })
+
+    $scope.profileUpdate=function(){
+        taskManagementFactory.updateUser(sessionObject.userId,{
+            "firstName": $scope.firstName,
+            "lastName": $scope.lastName,
+            "gender": $scope.gender,
+            "birthOfDate": $scope.birthOfDate,
+            "contactNo": $scope.contactNo,
+            "country": $scope.country,
+            "state": $scope.state,
+            "city": $scope.city,
+            "street": $scope.street,
+            "houseNumber": $scope.houseNumber,
+            "emailId": $scope.emailId
+        })
         .then(function (result) {
-            $scope.tittle = result.data.tittle;
-            $scope.description = result.data.description;
-            $scope.startDate = result.data.startDate;
-            $scope.dueDate = result.data.dueDate;
-            $scope.assignee = result.data.assignee;
-            $scope.isComplated = result.data.isComplated;
+            $window.alert(result.data.message);
+            $location.path('/task');
         })
         .catch(function (error) {
             console.log(error);
         })
+    };
 }]);
 
 taskManagementApp.filter('priorityFilter', function () {
     return function (priority) {
         if (priority == "important")
-            return "rgb(240, 149, 46)";
-        if (priority == "idel")
             return "lightblue";
+        if (priority == "idel")
+            return "#d4d1c9";
         return "white";
     };
 });

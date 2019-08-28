@@ -1,8 +1,12 @@
 <input type="button" value="Add subTask" ng-click="addSubTask()"><br>
 <div style="margin:10px;display: inline-block ;" ng-repeat="subTask in subTaskList">
-    <div ng-style="{'background-color':'#d4d1c9','border': '{{ subTask.isComplated | isComplatedFilter }}','padding':' 10px 10px 10px 10px'}">
-        <p ng-repeat="(key, val) in subTask">
-            {{ key }}:{{ val }}
+    <div ng-style="{'background-color':'#d4d1c9','padding':' 10px 10px 10px 10px'}">
+        <p>
+            <h2><label>Tittle :- </label>{{ subTask.tittle }}</h2>
+            <h4><label>Description :- </label>{{ subTask.description }}</h4>
+            <label>Start Date :- </label>{{ subTask.startDate | date : mm/dd/yyyy }}<br>
+            <label>Due Date :- </label>{{ subTask.dueDate | date : mm/dd/yyyy }}<br>
+            <label>Complated :- </label>{{ subTask.isComplated }}
         </p>
         <center>
             <input type="button" value="Edit" ng-click='editSubTask(subTask._id)'>

@@ -36,6 +36,17 @@ taskManagementLib.factory('taskManagementFactory',['$q','$http',function($q,$htt
             })
         });
     };
+    services.updateUser=function(userId,data){
+        return $q(function(resolved,rejected){
+            $http.put(url+"user/"+userId,data)
+            .then(function(result){
+                resolved(result);
+            })
+            .catch(function(error){
+                rejected(error);
+            })
+        });
+    };
     services.displayTask=function(userId){
         return $q(function(resolved,rejected){
             $http.get(url+"user/"+userId+"/task")
