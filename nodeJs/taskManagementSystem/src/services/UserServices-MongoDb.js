@@ -81,26 +81,53 @@ class UserServices {
                 });
         });
     }
+    updateProfile(userId, newData) {
+        let data = '{"firstName":"' + newData.firstName +
+            '","lastName":"' + newData.lastName +
+            '","gender":"' + newData.gender +
+            '","birthOfDate":"' + newData.birthOfDate +
+            '","contactInfo":{"contactNo":' + newData.contactNo +
+            ',"address":{"country":"' + newData.country +
+            '","state":"' + newData.state +
+            '","city":"' + newData.city +
+            '","street":"' + newData.street +
+            '","houseNumber":"' + newData.houseNumber +
+            '"},"emailId":"' + newData.emailId +
+            '"}}';
+
+        return this.updateUser(userId, data);
+    }
+    changePassword(userId, password) {
+        return new Promise((resolve, reject) => {
+            this._myModel.findOne({
+                    '_id': userId,
+                    'password': password.oldPassword
+                })
+                .exec((err, result) => {
+                    console.log();
+                    if (err)
+                        reject(err);
+                    if (result) {
+                        let data='{"password":"' + password.newPassword +
+                        '"}';
+                        this.updateUser(userId,data)
+                        .then((result)=>{
+                            resolve(result);
+                        })
+                        .catch((error)=>{
+                            reject(error);
+                        });
+                    }
+                    if(!err&&!result)
+                        reject(JSON.parse('{"message": "old password uncorrect."}'));
+                });
+        });
+    }
     updateUser(userId, newData) {
-
-          let data = '{"firstName":"' + newData.firstName +
-          '","lastName":"' + newData.lastName +
-          '","gender":"' + newData.gender +
-          '","birthOfDate":"' + newData.birthOfDate +
-          '","contactInfo":{"contactNo":' + newData.contactNo +
-          ',"address":{"country":"' + newData.country +
-          '","state":"' + newData.state +
-          '","city":"' + newData.city +
-          '","street":"' + newData.street +
-          '","houseNumber":"' + newData.houseNumber +
-          '"},"emailId":"' + newData.emailId +
-          '"}}';
-
-          
         return new Promise((resolve, reject) => {
             this._myModel.updateOne({
                 '_id': userId
-            }, JSON.parse(data), {
+            }, JSON.parse(newData), {
                 upsert: true
             }, (err, doc) => {
                 if (err)

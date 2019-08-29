@@ -64,6 +64,12 @@ let UserServices = require('../services/UserServices-MongoDb');
  *              emailId:
  *                  type: string
  *              password:
+ *                  type: string   
+ *      changePassword:
+ *          properties:
+ *              oldPassword:
+ *                  type: string
+ *              newPassword:
  *                  type: string
  */
 class UserController {
@@ -184,9 +190,43 @@ class UserController {
          *         description: Successfully updated
          */
         this._app.put('/api/v1/user/:userId', (req, res) => {
-            this._userServices.updateUser(req.params.userId, req.body)
+            this._userServices.updateProfile(req.params.userId, req.body)
                 .then((result) => {
                     res.send(JSON.parse('{"message": "update success."}'));
+                })
+                .catch((error) => {
+                    res.send(error);
+                });
+        });
+
+        /**
+         * @swagger
+         * /api/v1/user/{userId}/changePassword:
+         *   put:
+         *     tags:
+         *       - UserController
+         *     description: Change Password
+         *     produces:
+         *       - application/json
+         *     parameters:
+         *       - name: userId
+         *         description: user's id
+         *         in: path
+         *         required: true
+         *       - name: password
+         *         description: password object
+         *         in: body
+         *         required: true
+         *         schema:
+         *           $ref: '#/definitions/changePassword'
+         *     responses:
+         *       200:
+         *         description: password updated
+         */
+        this._app.put('/api/v1/user/:userId/changePassword', (req, res) => {
+            this._userServices.changePassword(req.params.userId, req.body)
+                .then((result) => {
+                    res.send(JSON.parse('{"message": "password update."}'));
                 })
                 .catch((error) => {
                     res.send(error);

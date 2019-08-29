@@ -318,8 +318,6 @@ taskManagementApp.controller('profileController', ['$scope', '$rootScope', 'task
 
     taskManagementFactory.getUserById(sessionObject.userId).
     then(function (result) {
-            console.log(result);
-
             $scope.firstName = result.data.firstName;
             $scope.lastName = result.data.lastName;
             $scope.gender = result.data.gender;
@@ -358,6 +356,10 @@ taskManagementApp.controller('profileController', ['$scope', '$rootScope', 'task
                 console.log(error);
             })
     };
+    $scope.cancel = function () {
+        $location.path('/task');
+    };
+
 }]);
 
 taskManagementApp.filter('priorityFilter', function () {

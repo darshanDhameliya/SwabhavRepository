@@ -1,11 +1,13 @@
 <center>
-    <form>
+    <form name="register" novalidate>
         <fieldset>
             <legend>Register</legend>
             <table>
                 <tr>
                     <td><label>First Name : </label></td>
-                    <td> <input type="text" ng-model="firstName"></td>
+                    <td> <input type="text" name="firstName" ng-model="firstName" required>
+                        <span style="color:red" ng-show="register.firstName.$touched && register.firstName.$invalid">The
+                            first name is required.</span></td>
                 </tr>
                 <tr>
                     <td><label>Last Name :</label></td>
