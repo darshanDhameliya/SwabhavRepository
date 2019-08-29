@@ -38,6 +38,10 @@ taskManagementApp.config(['$routeProvider', function ($routeProvider) {
             templateUrl: 'fragments/profile.html',
             controller: 'profileController'
         })
+        .when('/changePassword', {
+            templateUrl: 'fragments/changePassword.html',
+            controller: 'changePasswordController'
+        })
         .otherwise({
             redirectTo: '/'
         });
@@ -362,6 +366,30 @@ taskManagementApp.controller('profileController', ['$scope', '$rootScope', 'task
 
 }]);
 
+taskManagementApp.controller('changePasswordController', ['$scope', '$rootScope', 'taskManagementFactory', '$window', '$location', function ($scope, $rootScope, taskManagementFactory, $window, $location) {
+    $rootScope.headerVisible = false;
+    $rootScope.navigationBarVisible = true;
+    sessionObject = JSON.parse($window.sessionStorage.getItem("taskManagementSystem"));
+
+    $scope.changePassword = function () {
+        taskManagementFactory.changePassword(sessionObject.userId, {
+                "oldPassword": $scope.oldPassword,
+                "newPassword": $scope.newPassword
+            })
+            .then(function (result) {
+                $window.alert(result.data.message);
+                $location.path('/profile');
+            })
+            .catch(function (error) {
+                console.log(error);
+            })
+    };
+
+    $scope.cancel = function () {
+        $location.path('/profile');
+    };
+
+}]);
 taskManagementApp.filter('priorityFilter', function () {
     return function (priority) {
         if (priority == "important")

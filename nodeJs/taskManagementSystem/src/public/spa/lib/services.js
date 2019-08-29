@@ -47,6 +47,17 @@ taskManagementLib.factory('taskManagementFactory', ['$q', '$http', function ($q,
                 })
         });
     };
+    services.changePassword = function (userId, data) {
+        return $q(function (resolved, rejected) {
+            $http.put(url + "user/" + userId+"/changePassword", data)
+                .then(function (result) {
+                    resolved(result);
+                })
+                .catch(function (error) {
+                    rejected(error);
+                })
+        });
+    };
     services.displayTask = function (userId) {
         return $q(function (resolved, rejected) {
             $http.get(url + "user/" + userId + "/task")
