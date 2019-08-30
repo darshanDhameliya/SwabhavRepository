@@ -1,54 +1,52 @@
-<center>
-    <form>
-        <fieldset>
-            <legend>Profile</legend>
-            <table>
-                <tr>
-                    <td><label>First Name : </label></td>
-                    <td> <input type="text" ng-model="firstName"></td>
-                </tr>
-                <tr>
-                    <td><label>Last Name :</label></td>
-                    <td><input type="text" ng-model="lastName"></td>
-                </tr>
-                <tr>
-                    <td><label>BOD : </label></td>
-                    <td><input type="date" ng-model="birthOfDate"></td>
-                </tr>
-                <tr>
-                    <td><label>Gender : </label></td>
-                    <td>
-                        <input type="radio" ng-model="gender" value="male" />Male
-                        <input type="radio" ng-model="gender" value="female" />Female
-                        <input type="radio" ng-model="gender" value="others" />others </td>
-                </tr>
-                <tr>
-                    <td><label>Contact No : </label></td>
-                    <td><input type="tel" ng-model="contactNo"></td>
-                </tr>
-                <tr>
-                    <td><label>Email Id : </label></td>
-                    <td><input type="email" ng-model="emailId"></td>
-                </tr>
-                <tr>
-                    <td><label>Address : </label></td>
-                    <td><input type="text" ng-model="country" placeholder="Country"></td>
-                </tr>
+<form>
+    <fieldset>
+        <legend>Profile</legend>
+        <table>
+            <tr>
+                <td><label>First Name : </label></td>
+                <td> <input type="text" ng-model="firstName"></td>
+            </tr>
+            <tr>
+                <td><label>Last Name :</label></td>
+                <td><input type="text" ng-model="lastName"></td>
+            </tr>
+            <tr>
+                <td><label>BOD : </label></td>
+                <td><input type="date" ng-model="birthOfDate"></td>
+            </tr>
+            <tr>
+                <td><label>Gender : </label></td>
+                <td>
+                    <input type="radio" ng-model="gender" value="male" />Male
+                    <input type="radio" ng-model="gender" value="female" />Female
+                    <input type="radio" ng-model="gender" value="others" />others </td>
+            </tr>
+            <tr>
+                <td><label>Contact No : </label></td>
+                <td><input type="tel" ng-model="contactNo"></td>
+            </tr>
+            <tr>
+                <td><label>Email Id : </label></td>
+                <td><input type="email" ng-model="emailId"></td>
+            </tr>
+            <tr>
+                <td><label>Address : </label></td>
+                <td><input type="text" ng-model="country" placeholder="Country"></td>
+            </tr>
 
-                <tr>
-                    <td><input type="text" ng-model="state" placeholder="State"></td>
-                    <td><input type="text" ng-model="city" placeholder="City"></td>
-                </tr>
+            <tr>
+                <td><input type="text" ng-model="state" placeholder="State"></td>
+                <td><input type="text" ng-model="city" placeholder="City"></td>
+            </tr>
 
-                <tr>
-                    <td><input type="text" ng-model="street" placeholder="Street"></td>
-                    <td><input type="text" ng-model="houseNumber" placeholder="House Number"></td>
-                </tr>
+            <tr>
+                <td><input type="text" ng-model="street" placeholder="Street"></td>
+                <td><input type="text" ng-model="houseNumber" placeholder="House Number"></td>
+            </tr>
 
-            </table>
-            <br><input type="button" value="Cancel" ng-click=cancel()>
-            <input type="button" value="Update" ng-click=profileUpdate()>
-            <a href="#!/changePassword">Change Password</a>
-        </fieldset>
-    </form>
-</center>
+        </table>
+        <br><input type="button" value="Cancel" ng-click=cancel()>
+        <input type="button" value="Update" ng-click=profileUpdate()>
+        <a href="#!/changePassword">Change Password</a>
+    </fieldset>
+</form>

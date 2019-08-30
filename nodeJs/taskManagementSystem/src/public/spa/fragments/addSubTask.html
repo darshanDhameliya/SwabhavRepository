@@ -1,31 +1,29 @@
-<center>
-    <form>
-        <fieldset>
-            <legend>Add Sub Task</legend>
-            <table>
-                <tr>
-                    <td><label>Tittle : </label></td>
-                    <td> <input type="text" ng-model="tittle"></td>
-                </tr>
-                <tr>
-                    <td><label>Description :</label></td>
-                    <td><input type="text" ng-model="description"></td>
-                </tr>
-                <tr>
-                    <td><label>Start Date : </label></td>
-                    <td><input type="date" ng-model="startDate"></td>
-                </tr>
-                <tr>
-                    <td><label>Due Date : </label></td>
-                    <td><input type="date" ng-model="dueDate"></td>
-                </tr>
-                <tr>
-                    <td><label>Assignee : </label></td>
-                    <td><input type="text" ng-model="assignee"></td>
-                </tr>
-            </table>
-            <br>
-            <input type="button" value="Add subTask" ng-click=addSubTask()>
-        </fieldset>
-    </form>
-</center>
+<form>
+    <fieldset>
+        <legend>Add Sub Task</legend>
+        <table>
+            <tr>
+                <td><label>Tittle : </label></td>
+                <td> <input type="text" ng-model="tittle"></td>
+            </tr>
+            <tr>
+                <td><label>Description :</label></td>
+                <td><input type="text" ng-model="description"></td>
+            </tr>
+            <tr>
+                <td><label>Start Date : </label></td>
+                <td><input type="date" ng-model="startDate"></td>
+            </tr>
+            <tr>
+                <td><label>Due Date : </label></td>
+                <td><input type="date" ng-model="dueDate"></td>
+            </tr>
+            <tr>
+                <td><label>Assignee : </label></td>
+                <td><input type="text" ng-model="assignee"></td>
+            </tr>
+        </table>
+        <br>
+        <input type="button" value="Add subTask" ng-click=addSubTask()>
+    </fieldset>
+</form>

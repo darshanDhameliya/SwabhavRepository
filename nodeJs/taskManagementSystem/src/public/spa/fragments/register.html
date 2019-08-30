@@ -1,60 +1,85 @@
-<center>
-    <form name="register" novalidate>
-        <fieldset>
-            <legend>Register</legend>
-            <table>
-                <tr>
-                    <td><label>First Name : </label></td>
-                    <td> <input type="text" name="firstName" ng-model="firstName" required>
-                        <span style="color:red" ng-show="register.firstName.$touched && register.firstName.$invalid">The
-                            first name is required.</span></td>
-                </tr>
-                <tr>
-                    <td><label>Last Name :</label></td>
-                    <td><input type="text" ng-model="lastName"></td>
-                </tr>
-                <tr>
-                    <td><label>BOD : </label></td>
-                    <td><input type="date" ng-model="birthOfDate"></td>
-                </tr>
-                <tr>
-                    <td><label>Gender : </label></td>
-                    <td>
-                        <input type="radio" ng-model="gender" value="male" />Male
-                        <input type="radio" ng-model="gender" value="female" />Female
-                        <input type="radio" ng-model="gender" value="others" />others </td>
-                </tr>
-                <tr>
-                    <td><label>Contact No : </label></td>
-                    <td><input type="tel" ng-model="contactNo"></td>
-                </tr>
-                <tr>
-                    <td><label>Email Id : </label></td>
-                    <td><input type="email" ng-model="emailId"></td>
-                </tr>
-                <tr>
-                    <td><label>Password : </label></td>
-                    <td><input type="password" ng-model="password"></td>
-                </tr>
-                <tr>
-                    <td><label>Address : </label></td>
-                    <td><input type="text" ng-model="country" placeholder="Country"></td>
-                </tr>
+<form name="register" novalidate>
+    <fieldset>
+        <legend>Register</legend>
+        <table>
+            <tr>
+                <td><label>First Name : </label></td>
+                <td> <input type="text" name="firstName" ng-model="firstName" required>
+                    <span style="color:red" ng-show="register.firstName.$touched && register.firstName.$invalid">first
+                        name is required.</span></td>
+            </tr>
+            <tr>
+                <td><label>Last Name :</label></td>
+                <td><input type="text" name="lastName" ng-model="lastName" required>
+                    <span style="color:red" ng-show="register.lastName.$touched && register.lastName.$invalid">last name
+                        is required.</span></td>
+            </tr>
+            <tr>
+                <td><label>BOD : </label></td>
+                <td><input type="date" name="birthOfDate" ng-model="birthOfDate" required>
+                    <span style="color:red" ng-show="register.birthOfDate.$touched && register.birthOfDate.$invalid">birth of date is required.</span></td>
+            </tr>
+            <tr>
+                <td><label>Gender : </label></td>
+                <td>
+                    <input type="radio" ng-model="gender" value="male" ng-checked="true"/>Male
+                    <input type="radio" ng-model="gender" value="female" />Female
+                    <input type="radio" ng-model="gender" value="others" />others </td>
+            </tr>
+            <tr>
+                <td><label>Contact No : </label></td>
+                <td><input type="tel" name="contactNo" ng-model="contactNo" required>
+                    <span style="color:red" ng-show="register.contactNo.$touched && register.contactNo.$invalid">contact
+                        number is required.</span></td>
+            </tr>
+            <tr>
+                <td><label>Email Id : </label></td>
+                <td><input type="email" name="emailId" ng-model="emailId" required>
+                    <span style="color:red"
+                        ng-show="register.emailId.$touched && register.emailId.$error.required">emailId is
+                        required.</span>
+                    <span style="color:red" ng-show="register.emailId.$error.email">Not valid email!</span>
+                </td>
+            </tr>
+            <tr>
+                <td><label>Password : </label></td>
+                <td><input type="password" name="password" ng-model="password" required>
+                    <span style="color:red" ng-show="register.password.$touched && register.password.$invalid">password
+                        is required.</span></td>
+            </tr>
+            <tr>
+                <td><label>Confirm Password : </label></td>
+                <td><input type="password" name="confirmPassword" ng-model="confirmPassword" required>
+                    <span style="color:red"
+                        ng-show="register.confirmPassword.$touched && register.confirmPassword.$invalid">confirm
+                        password
+                        is required.</span>
+                    <span style="color:red"
+                        ng-show="register.confirmPassword.$touched &&password !== confirmPassword">passwords don't
+                        match.</span>
+                </td>
+            </tr>
+            <tr>
+                <td><label>Address : </label></td>
+                <td><input type="text" name="country" ng-model="country" placeholder="Country" required></td>
+            </tr>
 
-                <tr>
-                    <td><input type="text" ng-model="state" placeholder="State"></td>
-                    <td><input type="text" ng-model="city" placeholder="City"></td>
-                </tr>
+            <tr>
+                <td><input type="text" name="state" ng-model="state" placeholder="State" required></td>
+                <td><input type="text" name="city" ng-model="city" placeholder="City" required></td>
+            </tr>
 
-                <tr>
-                    <td><input type="text" ng-model="street" placeholder="Street"></td>
-                    <td><input type="text" ng-model="houseNumber" placeholder="House Number"></td>
-                </tr>
+            <tr>
+                <td><input type="text" name="street" ng-model="street" placeholder="Street" required></td>
+                <td><input type="text" name="houseNumber" ng-model="houseNumber" placeholder="House Number" required>
+                    <span style="color:red"
+                        ng-show="(register.country.$touched && register.country.$invalid)||(register.state.$touched && register.state.$invalid)||(register.city.$touched && register.city.$invalid)||(register.street.$touched && register.street.$invalid)||(register.houseNumber.$touched && register.houseNumber.$invalid)">all
+                        fields of address are is required.</span></td>
+            </tr>
 
-            </table>
-            <br>
-            <input type="button" value="Register" ng-click=userRegister()><br>
-            <a href="#!/login">LOG IN</a>
-        </fieldset>
-    </form>
-</center>
+        </table>
+        <br>
+        <input type="button" value="Register" ng-click=userRegister()>
+        <a href="#!/login">LOG IN</a>
+    </fieldset>
+</form>

@@ -77,29 +77,36 @@ taskManagementApp.controller('registerController', ['$scope', '$rootScope', 'tas
     $rootScope.headerVisible = true;
     $rootScope.navigationBarVisible = false;
     $scope.userRegister = function () {
-        taskManagementFactory.register({
-                "firstName": $scope.firstName,
-                "lastName": $scope.lastName,
-                "gender": $scope.gender,
-                "birthOfDate": $scope.birthOfDate,
-                "contactNo": $scope.contactNo,
-                "country": $scope.country,
-                "state": $scope.state,
-                "city": $scope.city,
-                "street": $scope.street,
-                "houseNumber": $scope.houseNumber,
-                "emailId": $scope.emailId,
-                "password": $scope.password
-            })
-            .then(function (result) {
-                sessionObject.userId = result.data._id;
-                $window.sessionStorage.setItem('taskManagementSystem', JSON.stringify(sessionObject));
-                $window.alert('register successful!');
-                $location.path('/task');
-            })
-            .catch(function (error) {
-                console.log(error);
-            })
+
+        if (!$scope.firstName || !$scope.lastName || !$scope.birthOfDate || !$scope.contactNo || !$scope.country || !$scope.state || !$scope.city || !$scope.street || !$scope.houseNumber || !$scope.emailId || !$scope.password)
+            $window.alert('all fields are required!');
+        else if ($scope.password != $scope.confirmPassword)
+            $window.alert('passwords do not match.');
+        else if ($scope.firstName && $scope.lastName && $scope.birthOfDate && $scope.contactNo && $scope.country && $scope.state && $scope.city && $scope.street && $scope.houseNumber && $scope.emailId && $scope.password) {
+            taskManagementFactory.register({
+                    "firstName": $scope.firstName,
+                    "lastName": $scope.lastName,
+                    "gender": $scope.gender,
+                    "birthOfDate": $scope.birthOfDate,
+                    "contactNo": $scope.contactNo,
+                    "country": $scope.country,
+                    "state": $scope.state,
+                    "city": $scope.city,
+                    "street": $scope.street,
+                    "houseNumber": $scope.houseNumber,
+                    "emailId": $scope.emailId,
+                    "password": $scope.password
+                })
+                .then(function (result) {
+                    sessionObject.userId = result.data._id;
+                    $window.sessionStorage.setItem('taskManagementSystem', JSON.stringify(sessionObject));
+                    $window.alert('register successful!');
+                    $location.path('/task');
+                })
+                .catch(function (error) {
+                    console.log(error);
+                })
+        }
     };
 }]);
 taskManagementApp.controller('taskController', ['$scope', '$rootScope', 'taskManagementFactory', '$window', '$location', function ($scope, $rootScope, taskManagementFactory, $window, $location) {
@@ -361,7 +368,7 @@ taskManagementApp.controller('profileController', ['$scope', '$rootScope', 'task
             })
     };
     $scope.cancel = function () {
-        $location.path('/task');
+        $window.history.back();
     };
 
 }]);
