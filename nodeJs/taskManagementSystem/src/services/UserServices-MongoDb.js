@@ -36,7 +36,7 @@ class UserServices {
                             if (err)
                                 reject(err);
                             if (result) {
-                                userLogin('{"emailId":"' + user.emailId +
+                                this.userLogin('{"emailId":"' + user.emailId +
                                     '","password":"' + user.password +
                                     '"}').then((result) => {
                                     resolve(result)

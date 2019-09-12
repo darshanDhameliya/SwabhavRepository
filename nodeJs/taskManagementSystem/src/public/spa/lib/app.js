@@ -149,8 +149,9 @@ taskManagementApp.controller('taskController', ['$scope', '$rootScope', 'taskMan
         $location.path('/editTask/' + taskId);
     };
 
-    $scope.displaySubTask = function (taskId) {
+    $scope.displaySubTask = function (taskId, taskTittle) {
         sessionObject.taskId = taskId;
+        sessionObject.taskTittle = taskTittle;
         $window.sessionStorage.setItem('taskManagementSystem', JSON.stringify(sessionObject));
         $location.path('/subTask');
     };
@@ -226,7 +227,7 @@ taskManagementApp.controller('subTaskController', ['$scope', '$rootScope', 'task
     $rootScope.headerVisible = false;
     $rootScope.navigationBarVisible = true;
     sessionObject = JSON.parse($window.sessionStorage.getItem("taskManagementSystem"));
-
+    $scope.taskTittle=sessionObject.taskTittle;
     let displaySubTask = function () {
         taskManagementFactory.displaySubTask(sessionObject.userId, sessionObject.taskId)
             .then(function (result) {

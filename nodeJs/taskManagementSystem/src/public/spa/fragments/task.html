@@ -1,8 +1,9 @@
+<h1 class="text-center">Task</h1>
 <input type="button" value="Add Task" ng-click="addTask()"><br>
 <div style="margin:10px;display: inline-block ;" ng-repeat="task in taskList">
     <div
         ng-style="{'background-color':'{{ task.priority | priorityFilter }}','padding':' 10px 10px 10px 10px'}">
-        <div ng-click="displaySubTask(task._id)">
+        <div ng-click="displaySubTask(task._id,task.tittle)">
             <p>
                 <h2><label>Tittle :- </label>{{ task.tittle }}</h2>
                 <h4><label>Description :- </label>{{ task.description }}</h4>
